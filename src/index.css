@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans;
+    @apply bg-light-bg text-gray-900;
+    @apply dark:bg-dark-bg dark:text-white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-deep-yellow to-deep-yellow-alt bg-clip-text text-transparent;
+  }
+}
+
