@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from './contexts/ThemeContext'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import About from './pages/About'
 import SkillsEducation from './pages/SkillsEducation'
@@ -26,6 +27,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          <ScrollToTop />
         </div>
       </Router>
     </ThemeProvider>

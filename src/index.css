@@ -37,5 +37,14 @@
   .text-gradient {
     @apply bg-gradient-to-r from-deep-yellow to-deep-yellow-alt bg-clip-text text-transparent;
   }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
 }
 

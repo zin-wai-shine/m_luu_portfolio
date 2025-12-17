@@ -23,7 +23,7 @@ const Navigation = () => {
     { path: '/about', label: 'About' },
     { path: '/skills-education', label: 'Skills & Education' },
     { path: '/experience', label: 'Experience' },
-    { path: '/portfolio', label: 'Portfolio' },
+    { path: '/portfolio', label: 'Projects' },
   ]
 
   const toggleMobileMenu = () => {
@@ -166,23 +166,39 @@ const Navigation = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden backdrop-blur-xl border-t border-gray-200/30 dark:border-gray-700/30"
           >
-            <ul className="container mx-auto px-4 py-4 space-y-4">
-              {navLinks.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    onClick={closeMobileMenu}
-                    className={`block py-2 transition-colors duration-300 font-light ${
-                      location.pathname === link.path
-                        ? 'text-deep-yellow'
-                        : 'text-gray-800 dark:text-gray-200 hover:text-deep-yellow dark:hover:text-deep-yellow'
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="container mx-auto px-4 py-4">
+              <ul className="space-y-4 mb-4">
+                {navLinks.map((link) => (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      onClick={closeMobileMenu}
+                      className={`block py-2 transition-colors duration-300 font-light ${
+                        location.pathname === link.path
+                          ? 'text-deep-yellow'
+                          : 'text-gray-800 dark:text-gray-200 hover:text-deep-yellow dark:hover:text-deep-yellow'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              {/* Contact Button in Mobile Menu */}
+              <button
+                onClick={() => {
+                  navigate('/contact')
+                  closeMobileMenu()
+                }}
+                className={`w-full flex items-center justify-center px-8 py-3.5 rounded-full font-light text-sm uppercase tracking-wider transition-all duration-300 ${
+                  location.pathname === '/contact'
+                    ? 'bg-deep-yellow/20 text-deep-yellow border border-deep-yellow/30'
+                    : 'bg-black/20 backdrop-blur-sm text-deep-yellow border border-white/10 hover:bg-deep-yellow/10'
+                }`}
+              >
+                Contact
+              </button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
