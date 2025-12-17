@@ -12,6 +12,7 @@ export default {
         'deep-yellow-alt': '#EAB308',
         'light-bg': '#FAFAFA',
         'dark-bg': '#0A0A0A',
+        'text-primary': '#9DA3AF',
       },
       fontFamily: {
         'sans': ['Montserrat', 'system-ui', 'sans-serif'],

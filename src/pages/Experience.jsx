@@ -58,7 +58,7 @@ const Experience = () => {
           {/* Awards & Recognition */}
           <motion.div variants={itemVariants}>
             <div className="mb-8">
-              <h2 className="text-3xl md:text-4xl font-sans mb-4 text-gray-900 dark:text-white">
+              <h2 className="text-3xl md:text-4xl font-sans mb-4 text-gray-900 dark:text-[#9DA3AF]">
                 Awards & Recognition
               </h2>
               <div className="w-24 h-1 bg-deep-yellow mb-6"></div>
@@ -77,7 +77,7 @@ const Experience = () => {
                   <div className="flex items-start gap-4">
                       <div className="text-5xl">{award.icon}</div>
                     <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-[#9DA3AF] mb-2">
                           {award.title}
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">{award.description}</p>

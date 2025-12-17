@@ -80,7 +80,7 @@ const SkillsEducation = () => {
               >
                 <Card>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{edu.institution}</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-[#9DA3AF]">{edu.institution}</h3>
                     <span className="text-deep-yellow font-semibold">{edu.year}</span>
                 </div>
                 {edu.degree && (
@@ -100,7 +100,7 @@ const SkillsEducation = () => {
           animate="visible"
         >
           <motion.div variants={itemVariants} className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-sans mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-3xl md:text-4xl font-sans mb-4 text-gray-900 dark:text-[#9DA3AF]">
               Personal Skills
             </h2>
             <div className="w-24 h-1 bg-deep-yellow mb-6"></div>
@@ -114,7 +114,7 @@ const SkillsEducation = () => {
               >
                 <Card hover>
                   <div className="text-5xl mb-4 text-center">{skill.icon}</div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-[#9DA3AF] mb-2 text-center">
                     {skill.title}
                   </h3>
                   <div className="text-center mb-3">

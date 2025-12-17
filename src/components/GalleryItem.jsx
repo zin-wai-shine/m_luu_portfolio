@@ -88,7 +88,7 @@ const GalleryItem = ({ project, index, onVideoClick }) => {
         {/* Video Indicator - Top Right */}
         {project.videoUrl && (
           <div className="absolute top-4 right-4">
-            <div className="px-3 py-1.5 bg-black/80 backdrop-blur-sm text-white text-xs font-semibold rounded-md flex items-center gap-2 border border-white/20">
+            <div style={{ color: '#9DA3AF' }} className="px-3 py-1.5 bg-black/80 backdrop-blur-sm text-xs font-semibold rounded-md flex items-center gap-2 border border-white/20">
               <div className="w-2 h-2 bg-deep-yellow rounded-full animate-pulse"></div>
               <span>VIDEO</span>
             </div>
@@ -99,7 +99,7 @@ const GalleryItem = ({ project, index, onVideoClick }) => {
       {/* Content Section - Modern Design */}
       <div className="p-6 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950">
         {/* Title */}
-        <h3 className="text-2xl font-sans font-bold text-gray-900 dark:text-white mb-3 group-hover:text-deep-yellow transition-colors duration-300">
+        <h3 className="text-2xl font-sans font-bold text-gray-900 dark:text-[#9DA3AF] mb-3 group-hover:text-deep-yellow transition-colors duration-300">
           {project.title}
         </h3>
         

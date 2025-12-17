@@ -171,7 +171,8 @@ const Home = () => {
           className="text-5xl md:text-7xl lg:text-8xl font-sans mb-8 tracking-tight"
         >
           <span 
-            className="text-white font-light drop-shadow-[0_4px_20px_rgba(0,0,0,0.9),0_0_40px_rgba(0,0,0,0.5)]"
+            style={{ color: '#9DA3AF' }}
+            className="font-light drop-shadow-[0_4px_20px_rgba(0,0,0,0.9),0_0_40px_rgba(0,0,0,0.5)]"
             style={{
               textShadow: '0 0 30px rgba(255,255,255,0.3), 0 0 60px rgba(255,255,255,0.15)',
               letterSpacing: '0.05em',
@@ -202,7 +203,8 @@ const Home = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-lg md:text-xl lg:text-2xl text-white mb-6 font-light tracking-wide uppercase drop-shadow-[0_3px_15px_rgba(0,0,0,0.8),0_0_30px_rgba(0,0,0,0.4)]"
+          style={{ color: '#9DA3AF' }}
+          className="text-lg md:text-xl lg:text-2xl mb-6 font-light tracking-wide uppercase drop-shadow-[0_3px_15px_rgba(0,0,0,0.8),0_0_30px_rgba(0,0,0,0.4)]"
           style={{ 
             letterSpacing: '0.15em',
             textShadow: '0 0 20px rgba(255,255,255,0.2), 0 0 40px rgba(255,255,255,0.1)',
@@ -215,7 +217,8 @@ const Home = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          className="text-base md:text-lg text-white max-w-2xl mb-10 leading-relaxed font-light drop-shadow-[0_2px_12px_rgba(0,0,0,0.7),0_0_25px_rgba(0,0,0,0.3)]"
+          style={{ color: '#9DA3AF' }}
+          className="text-base md:text-lg max-w-2xl mb-10 leading-relaxed font-light drop-shadow-[0_2px_12px_rgba(0,0,0,0.7),0_0_25px_rgba(0,0,0,0.3)]"
           style={{ 
             letterSpacing: '0.05em',
             textShadow: '0 0 15px rgba(255,255,255,0.15), 0 0 30px rgba(255,255,255,0.08)',
@@ -236,7 +239,8 @@ const Home = () => {
         <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
-            className="text-white hover:text-deep-yellow transition-colors drop-shadow-lg"
+            style={{ color: '#9DA3AF' }}
+            className="hover:text-deep-yellow transition-colors drop-shadow-lg"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
@@ -274,7 +278,8 @@ const Home = () => {
               ></motion.div>
               
               <h2 
-                className="text-5xl md:text-6xl lg:text-7xl font-light mb-10 text-white tracking-tight relative"
+                style={{ color: '#9DA3AF' }}
+                className="text-5xl md:text-6xl lg:text-7xl font-light mb-10 tracking-tight relative"
                 style={{
                   letterSpacing: '0.03em',
                   textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
@@ -400,7 +405,8 @@ const Home = () => {
             ></motion.div>
             
             <h2 
-              className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-white tracking-tight relative"
+              style={{ color: '#9DA3AF' }}
+              className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 tracking-tight relative"
               style={{
                 letterSpacing: '0.03em',
                 textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
@@ -500,7 +506,7 @@ const Home = () => {
                       {/* Video Indicator */}
                       {project.videoUrl && (
                         <div className="absolute top-4 right-4">
-                          <div className="px-3 py-1.5 bg-black/40 backdrop-blur-sm text-white text-xs font-light rounded-full flex items-center gap-2">
+                          <div style={{ color: '#9DA3AF' }} className="px-3 py-1.5 bg-black/40 backdrop-blur-sm text-xs font-light rounded-full flex items-center gap-2">
                             <div className="w-2 h-2 bg-deep-yellow rounded-full animate-pulse"></div>
                             <span>VIDEO</span>
                           </div>
@@ -510,7 +516,7 @@ const Home = () => {
                     
                     {/* Text Content Group with Padding */}
                     <div className="p-6 bg-black/20 backdrop-blur-sm">
-                      <h3 className="text-2xl font-sans font-light text-white mb-3 group-hover:text-deep-yellow transition-colors">
+                      <h3 style={{ color: '#9DA3AF' }} className="text-2xl font-sans font-light mb-3 group-hover:text-deep-yellow transition-colors">
                         {project.title}
                       </h3>
                       <div className="flex items-center gap-2 mb-4">
@@ -555,7 +561,8 @@ const Home = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 
-              className="text-3xl md:text-5xl font-light mb-6 text-white tracking-tight"
+              style={{ color: '#9DA3AF' }}
+              className="text-3xl md:text-5xl font-light mb-6 tracking-tight"
               style={{
                 letterSpacing: '0.03em',
                 textShadow: '0 0 30px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.15)',
@@ -609,7 +616,7 @@ const Home = () => {
               }}></div>
             </div>
             {/* Arrow icon */}
-            <svg className="w-5 h-5 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg style={{ color: '#9DA3AF' }} className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 10l7-7m0 0l7 7m-7-7v18" />
             </svg>
           </motion.button>

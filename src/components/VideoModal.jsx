@@ -55,7 +55,7 @@ const VideoModal = ({ isOpen, onClose, videoUrl, title }) => {
             >
               {/* Header */}
               <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-[#9DA3AF]">
                   {title}
                 </h3>
                 <button

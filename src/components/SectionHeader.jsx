@@ -7,7 +7,7 @@ const SectionHeader = ({ title, subtitle, className = '' }) => {
       animate={{ opacity: 1, y: 0 }}
       className={`text-center mb-12 ${className}`}
     >
-      <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans mb-4 text-gray-900 dark:text-white">
+      <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans mb-4 text-gray-900 dark:text-[#9DA3AF]">
         {title}
       </h2>
       {subtitle && (

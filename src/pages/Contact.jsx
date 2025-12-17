@@ -88,7 +88,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white focus:outline-none focus:border-deep-yellow transition-colors"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-[#9DA3AF] focus:outline-none focus:border-deep-yellow transition-colors"
                     placeholder="Your name"
                   />
                 </div>
@@ -103,7 +103,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white focus:outline-none focus:border-deep-yellow transition-colors"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-[#9DA3AF] focus:outline-none focus:border-deep-yellow transition-colors"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -142,7 +142,7 @@ const Contact = () => {
                     <div className="flex items-start gap-4">
                       <div className="text-4xl">{info.icon}</div>
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-[#9DA3AF] mb-1">
                           {info.label}
                         </h3>
                         {info.link ? (

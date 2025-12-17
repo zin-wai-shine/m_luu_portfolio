@@ -104,7 +104,7 @@ const Portfolio = () => {
                 className={`relative px-8 py-4 font-bold text-sm uppercase tracking-wider transition-all duration-300 overflow-hidden ${
                 activeFilter === filter
                     ? 'text-gray-900'
-                    : 'text-gray-400 dark:text-gray-400 hover:text-white'
+                    : 'text-gray-400 dark:text-gray-400 hover:text-[#9DA3AF]'
               }`}
             >
                 {/* Active state background */}

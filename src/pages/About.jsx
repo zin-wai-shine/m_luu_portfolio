@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import aboutAminPageImage from '../assets/images/about_amin_page.png'
 
 const About = () => {
   const containerVariants = {
@@ -30,35 +31,53 @@ const About = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-24 pb-20 bg-white dark:bg-gray-900">
+    <div className="min-h-screen pt-24 pb-20 bg-black">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden">
-        {/* Background with gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-deep-yellow/10 via-transparent to-deep-yellow/5"></div>
-        
+      <section className="relative py-20 px-4 overflow-hidden bg-black">
         <div className="container mx-auto max-w-7xl relative z-10">
-        <motion.div
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-        <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.2, type: "spring" }}
-              className="inline-block mb-6"
+            className="text-center mb-16"
+          >
+            {/* Decorative accent line with glow */}
+            <motion.div 
+              className="w-20 h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mx-auto mb-10"
+              initial={{ width: 0 }}
+              animate={{ width: '80px' }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              style={{
+                boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+              }}
+            ></motion.div>
+            
+            <h1 
+              style={{ 
+                color: '#9DA3AF',
+                letterSpacing: '0.03em',
+                textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
+              }}
+              className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight"
             >
-              <span className="px-4 py-2 bg-deep-yellow text-gray-900 text-sm font-bold uppercase tracking-wider">
-                About Me
-              </span>
-            </motion.div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-bold text-gray-900 dark:text-white mb-6">
               Creative Director &<br />
-              <span className="text-deep-yellow">Filmmaker</span>
+              <span 
+                className="text-deep-yellow"
+                style={{
+                  textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
+                }}
+              >
+                Filmmaker
+              </span>
             </h1>
-            <div className="w-32 h-1 bg-deep-yellow mx-auto mb-6"></div>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p 
+              style={{ 
+                color: '#9DA3AF',
+                textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
+                letterSpacing: '0.15em',
+              }}
+              className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed font-light"
+            >
               8 years of experience in filmmaking with a passion for visual storytelling
             </p>
           </motion.div>
@@ -77,10 +96,15 @@ const About = () => {
                 variants={itemVariants}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl font-sans font-bold text-deep-yellow mb-2">
+                <div 
+                  className="text-4xl md:text-5xl font-light text-deep-yellow mb-2"
+                  style={{
+                    textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
+                  }}
+                >
                   {stat.value}
                 </div>
-                <div className="text-sm md:text-base text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+                <div className="text-sm md:text-base text-gray-300 uppercase tracking-wider font-light">
                   {stat.label}
                 </div>
               </motion.div>
@@ -89,214 +113,247 @@ const About = () => {
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-20 px-4">
+      {/* My Story and Image Section */}
+      <section className="py-20 px-4 bg-black relative">
         <div className="container mx-auto max-w-6xl">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start"
-          >
-            {/* Left Column: Story & Expertise */}
-            <motion.div 
-              variants={itemVariants}
-              className="space-y-8"
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            {/* Left Column: My Story */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                transition={{ delay: 0.2 }}
+                className="mb-8"
               >
                 <motion.div 
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  className="w-20 h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mb-10"
+                  initial={{ width: 0 }}
+                  whileInView={{ width: '80px' }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="flex items-center gap-3 mb-8"
+                  transition={{ delay: 0.2, duration: 0.8 }}
+                  style={{
+                    boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+                  }}
+                ></motion.div>
+                <h2 
+                  style={{ 
+                    color: '#9DA3AF',
+                    letterSpacing: '0.03em',
+                    textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
+                  }}
+                  className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight"
                 >
-                  <div className="h-1 w-16 bg-deep-yellow"></div>
-                  <h2 className="text-3xl md:text-4xl font-sans font-bold text-gray-900 dark:text-white">
-                    My Story
-                  </h2>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 }}
-                  className="space-y-6 mb-10"
-                >
-                  <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-                    My background is in advertising production, TVC production, social media production, and food vlog production. Seeking new challenges, collaborations, and opportunities. I am passionate about contributing with my skills and bringing ideas to life.
-                  </p>
-                  <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Specializing in commercial TVC production, short films, music videos, and documentaries. With expertise spanning from pre-production to post-production, I bring creative visions to life through cinematic storytelling.
-                  </p>
-                </motion.div>
-
-                {/* Expertise as badges */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 }}
-                  className="flex flex-wrap gap-3"
-                >
-                  {expertise.map((item, index) => (
-                    <motion.span
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.5 + index * 0.1 }}
-                      whileHover={{ scale: 1.05, y: -2 }}
-                      className="px-5 py-2.5 bg-deep-yellow text-gray-900 rounded-md text-sm font-bold uppercase tracking-wider shadow-lg hover:shadow-xl transition-all cursor-default"
-                    >
-                      {item.icon} {item.title}
-                    </motion.span>
-                  ))}
-                </motion.div>
+                  My <span className="text-deep-yellow" style={{
+                    textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
+                  }}>Story</span>
+                </h2>
               </motion.div>
-            </motion.div>
-
-            {/* Right Column: Visual & Details */}
-            <motion.div 
-              variants={itemVariants}
-              className="space-y-10"
-            >
-              {/* Visual Element */}
+              
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="relative"
+                transition={{ delay: 0.3 }}
+                className="space-y-6 mb-10"
               >
-                <div className="aspect-square bg-transparent relative">
-                  {/* Cinematic Camera/Videography Illustration */}
-                  <motion.div 
+                <p 
+                  style={{ 
+                    color: '#9DA3AF',
+                    textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
+                  }}
+                  className="text-lg md:text-xl leading-relaxed font-light"
+                >
+                  My background is in advertising production, TVC production, social media production, and food vlog production. Seeking new challenges, collaborations, and opportunities. I am passionate about contributing with my skills and bringing ideas to life.
+                </p>
+                <p 
+                  style={{ color: '#9DA3AF' }}
+                  className="text-lg md:text-xl leading-relaxed font-light"
+                >
+                  Specializing in commercial TVC production, short films, music videos, and documentaries. With expertise spanning from pre-production to post-production, I bring creative visions to life through cinematic storytelling.
+                </p>
+              </motion.div>
+
+              {/* Expertise as badges */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-2"
+              >
+                {expertise.map((item, index) => (
+                  <motion.div
+                    key={index}
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.3, duration: 0.8 }}
-                    className="absolute inset-0 flex items-center justify-center p-12"
+                    transition={{ delay: 0.5 + index * 0.1 }}
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    className="rounded-lg flex items-center gap-2 sm:gap-2 transition-all cursor-default"
                   >
-                    <svg className="w-full h-full" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      {/* Camera Body */}
-                      <motion.rect 
-                        initial={{ pathLength: 0 }}
-                        whileInView={{ pathLength: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                        x="100" y="120" width="200" height="160" rx="20" fill="none" stroke="currentColor" strokeWidth="4" className="text-deep-yellow" 
-                      />
-                      <rect x="120" y="140" width="160" height="120" rx="10" fill="rgba(237, 187, 28, 0.1)" stroke="currentColor" strokeWidth="2" className="text-deep-yellow/50" />
-                      
-                      {/* Lens */}
-                      <motion.circle 
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.7, type: "spring", stiffness: 200 }}
-                        cx="200" cy="200" r="50" fill="none" stroke="currentColor" strokeWidth="4" className="text-deep-yellow" 
-                      />
-                      <circle cx="200" cy="200" r="35" fill="none" stroke="currentColor" strokeWidth="2" className="text-deep-yellow/50" />
-                      <circle cx="200" cy="200" r="20" fill="rgba(237, 187, 28, 0.2)" />
-                      
-                      {/* Viewfinder */}
-                      <motion.rect 
-                        initial={{ y: -20, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.9 }}
-                        x="150" y="100" width="100" height="30" rx="5" fill="none" stroke="currentColor" strokeWidth="3" className="text-deep-yellow" 
-                      />
-                      
-                      {/* Film Strip Decoration */}
-                      <motion.g 
-                        initial={{ x: -50, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 1.1 }}
-                        transform="translate(50, 300)"
-                      >
-                        <rect x="0" y="0" width="300" height="40" rx="5" fill="none" stroke="currentColor" strokeWidth="2" className="text-deep-yellow/30" />
-                        <line x1="30" y1="15" x2="270" y2="15" stroke="currentColor" strokeWidth="1" className="text-deep-yellow/20" />
-                        <line x1="30" y1="25" x2="270" y2="25" stroke="currentColor" strokeWidth="1" className="text-deep-yellow/20" />
-                        {/* Perforations */}
-                        <circle cx="20" cy="10" r="2" fill="currentColor" className="text-deep-yellow/40" />
-                        <circle cx="20" cy="20" r="2" fill="currentColor" className="text-deep-yellow/40" />
-                        <circle cx="20" cy="30" r="2" fill="currentColor" className="text-deep-yellow/40" />
-                        <circle cx="280" cy="10" r="2" fill="currentColor" className="text-deep-yellow/40" />
-                        <circle cx="280" cy="20" r="2" fill="currentColor" className="text-deep-yellow/40" />
-                        <circle cx="280" cy="30" r="2" fill="currentColor" className="text-deep-yellow/40" />
-                      </motion.g>
+                    <span 
+                      className="text-deep-yellow text-lg sm:text-xl rounded-full w-10 h-10 sm:w-10 sm:h-10 flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: '#1a1a1a' }}
+                    >
+                      {item.icon}
+                    </span>
+                    <span style={{ color: '#9DA3AF' }} className="text-xs sm:text-sm font-light uppercase tracking-wider">
+                      {item.title}
+                    </span>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* Right Column: Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative w-full"
+            >
+              <div className="relative overflow-hidden rounded-lg">
+                {/* About Amin Page Image - Black & White Design */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                  className="relative"
+                >
+                  <img
+                    src={aboutAminPageImage}
+                    alt="About"
+                    className="w-full h-full object-cover mx-auto"
+                    style={{
+                      filter: 'grayscale(100%) contrast(1.3) brightness(1.5)',
+                    }}
+                  />
+                  {/* Black filter from left side - stronger */}
+                  <div 
+                    className="absolute inset-0"
+                    style={{
+                      background: 'linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.1) 90%, transparent 100%)'
+                    }}
+                  ></div>
+                  {/* Additional dark overlay for button-like effect */}
+                  <div 
+                    className="absolute inset-0 bg-black/30"
+                  ></div>
+                  {/* Cool overlay effects */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/20"></div>
+                  {/* Subtle glow effect */}
+                  <div 
+                    className="absolute inset-0"
+                    style={{
+                      boxShadow: 'inset 0 0 50px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.5)',
+                    }}
+                  ></div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+        
+        {/* Black filter at base/bottom */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 h-10"
+          style={{
+            background: 'linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.4) 60%, transparent 100%)'
+          }}
+        ></div>
+      </section>
+
+      {/* Section 3: Personal Details */}
+      <section className="py-20 px-4 bg-black relative">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="w-full"
+          >
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="mb-8 text-center"
+            >
+              <motion.div 
+                className="w-20 h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mb-6 mx-auto"
+                initial={{ width: 0 }}
+                whileInView={{ width: '80px' }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                style={{
+                  boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+                }}
+              ></motion.div>
+              <h3 
+                style={{ 
+                  color: '#9DA3AF',
+                  letterSpacing: '0.03em',
+                  textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
+                }}
+                className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight"
+              >
+                Personal <span className="text-deep-yellow" style={{
+                  textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
+                }}>Details</span>
+              </h3>
+            </motion.div>
+            <div className="flex flex-wrap gap-4 w-full">
+              {[
+                { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', label: 'Date of Birth', value: '5.5.1995' },
+                { icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z', label: 'Nationality', value: 'Burma' },
+                { icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129', label: 'Languages', value: 'English, Thai (Basic)' },
+                { icon: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', label: 'Position', value: 'Director, Cinematographer & Editor' },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 + index * 0.1 }}
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  className="flex-1 min-w-[200px] p-5 bg-black/20 backdrop-blur-sm rounded-lg text-center"
+                >
+                  <motion.div 
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="w-12 h-12 rounded-full bg-deep-yellow/20 flex items-center justify-center mx-auto mb-3"
+                  >
+                    <svg className="w-6 h-6 text-deep-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
                     </svg>
                   </motion.div>
-                </div>
-              </motion.div>
-
-              {/* Personal Details */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="w-full"
-              >
-                <motion.div 
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 }}
-                  className="flex items-center gap-3 mb-8 justify-end"
-                >
-                  <div className="h-1 w-12 bg-deep-yellow"></div>
-                  <h3 className="text-2xl font-sans font-bold text-gray-900 dark:text-white">
-                    Personal Details
-                  </h3>
+                  <div className="text-xs text-gray-400 mb-2 uppercase tracking-wider font-light">
+                    {item.label}
+                  </div>
+                  <div style={{ color: '#9DA3AF' }} className="text-sm font-light leading-relaxed whitespace-pre-line">
+                    {item.value}
+                  </div>
                 </motion.div>
-                <div className="flex gap-4 w-full">
-                  {[
-                    { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', label: 'Date of Birth', value: '5.5.1995' },
-                    { icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z', label: 'Nationality', value: 'Burma' },
-                    { icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129', label: 'Languages', value: 'English, Thai (Basic)' },
-                    { icon: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', label: 'Position', value: 'Director, Cinematographer & Editor' },
-                  ].map((item, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.4 + index * 0.1 }}
-                      whileHover={{ scale: 1.02, y: -2 }}
-                      className="flex-1 p-5 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700 text-center"
-                    >
-                      <motion.div 
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        className="w-12 h-12 rounded-full bg-deep-yellow/20 flex items-center justify-center mx-auto mb-3"
-                      >
-                        <svg className="w-6 h-6 text-deep-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
-                        </svg>
-                      </motion.div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wider">
-                        {item.label}
-                      </div>
-                      <div className="text-sm font-bold text-gray-900 dark:text-white">
-                        {item.value}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+              ))}
+            </div>
           </motion.div>
-        </motion.div>
-      </div>
+        </div>
+        
+        {/* Black filter at base/bottom */}
+        <div 
+          className="absolute bottom-0 left-0 right-0 h-10"
+          style={{
+            background: 'linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.4) 60%, transparent 100%)'
+          }}
+        ></div>
       </section>
     </div>
   )
