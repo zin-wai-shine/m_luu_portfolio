@@ -3,6 +3,7 @@ import { ThemeProvider } from './contexts/ThemeContext'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import ScrollToTopOnRouteChange from './components/ScrollToTopOnRouteChange'
 import Home from './pages/Home'
 import About from './pages/About'
 import SkillsEducation from './pages/SkillsEducation'
@@ -14,6 +15,7 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
+        <ScrollToTopOnRouteChange />
         <div className="min-h-screen flex flex-col">
           <Navigation />
           <main className="flex-grow">
