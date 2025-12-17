@@ -160,7 +160,7 @@ const Contact = () => {
                   </Card>
                 </motion.div>
               ))}
-            </div>
+              </div>
           </motion.div>
         </motion.div>
 
@@ -172,7 +172,7 @@ const Contact = () => {
           transition={{ delay: 0.3 }}
         >
           <Card className="text-center">
-            <h3 className="text-2xl font-display text-deep-yellow mb-2">Thank You</h3>
+            <h3 className="text-2xl font-sans text-deep-yellow mb-2">Thank You</h3>
             <p className="text-gray-700 dark:text-gray-300">
               Thank you for your interest in my work. I look forward to hearing from you and discussing potential collaborations.
             </p>

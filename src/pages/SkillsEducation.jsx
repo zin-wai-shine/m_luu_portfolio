@@ -66,7 +66,7 @@ const SkillsEducation = () => {
           className="mb-20"
         >
           <motion.div variants={itemVariants} className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-display mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-3xl md:text-4xl font-sans mb-4 text-gray-900 dark:text-white">
               Education
             </h2>
             <div className="w-24 h-1 bg-deep-yellow mb-6"></div>
@@ -79,13 +79,13 @@ const SkillsEducation = () => {
                 variants={itemVariants}
               >
                 <Card>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{edu.institution}</h3>
                     <span className="text-deep-yellow font-semibold">{edu.year}</span>
-                  </div>
-                  {edu.degree && (
+                </div>
+                {edu.degree && (
                     <p className="text-deep-yellow mb-2 font-medium">{edu.degree}</p>
-                  )}
+                )}
                   <p className="text-gray-700 dark:text-gray-300">{edu.description}</p>
                 </Card>
               </motion.div>
@@ -100,7 +100,7 @@ const SkillsEducation = () => {
           animate="visible"
         >
           <motion.div variants={itemVariants} className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-display mb-4 text-gray-900 dark:text-white">
+            <h2 className="text-3xl md:text-4xl font-sans mb-4 text-gray-900 dark:text-white">
               Personal Skills
             </h2>
             <div className="w-24 h-1 bg-deep-yellow mb-6"></div>
@@ -119,8 +119,8 @@ const SkillsEducation = () => {
                   </h3>
                   <div className="text-center mb-3">
                     <span className="inline-block px-3 py-1 bg-deep-yellow/20 dark:bg-deep-yellow/10 text-deep-yellow rounded-full text-sm font-semibold">
-                      {skill.level}
-                    </span>
+                  {skill.level}
+                </span>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed text-center">
                     {skill.description}

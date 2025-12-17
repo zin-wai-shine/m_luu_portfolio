@@ -1,0 +1,18 @@
+INSTRUCTIONS FOR ADDING YOUR BACKGROUND IMAGE
+===============================================
+
+1. Place your background image in this folder (src/assets/images/)
+
+2. Name the image file exactly: hero-cinematic-bg.jpg
+   (You can also use .png format - just update the import in Home.jsx)
+
+3. The image will automatically be used as the background for the home page hero section
+
+4. Recommended image specifications:
+   - Size: 1920x1080 pixels or larger
+   - Format: JPG or PNG
+   - The image should show a cinematic production scene with a camera operator
+   - Person with camera should be positioned on the right side of the image
+
+5. After adding the image, the home page will automatically use it as the background.
+

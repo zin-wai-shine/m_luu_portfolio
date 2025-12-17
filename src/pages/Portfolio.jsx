@@ -40,10 +40,11 @@ const Portfolio = () => {
     },
     {
       id: 3,
-      title: 'CANAL+ Champions League',
-      client: 'CANAL+',
+      title: 'BYD EV CAR - GLOBAL TVC',
+      client: 'BYD',
       category: 'TVC',
-      description: 'Champions League Campaign',
+      description: 'Global TVC Campaign',
+      videoUrl: 'https://www.facebook.com/watch/?v=692763926316214&rdid=CLj7Ko9k3dci332V',
     },
     {
       id: 4,
@@ -96,16 +97,16 @@ const Portfolio = () => {
           <div className="inline-flex">
             {filters.map((filter, index) => (
               <motion.button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 className={`relative px-8 py-4 font-bold text-sm uppercase tracking-wider transition-all duration-300 overflow-hidden ${
-                  activeFilter === filter
+                activeFilter === filter
                     ? 'text-gray-900'
                     : 'text-gray-400 dark:text-gray-400 hover:text-white'
-                }`}
-              >
+              }`}
+            >
                 {/* Active state background */}
                 {activeFilter === filter && (
                   <motion.div
@@ -118,7 +119,7 @@ const Portfolio = () => {
                 
                 {/* Text */}
                 <span className="relative z-10 whitespace-nowrap">
-                  {filter}
+              {filter}
                 </span>
                 
                 {/* Shine effect on active */}
@@ -136,7 +137,7 @@ const Portfolio = () => {
                   />
                 )}
               </motion.button>
-            ))}
+          ))}
           </div>
         </motion.div>
 
@@ -152,7 +153,7 @@ const Portfolio = () => {
           >
             {filteredProjects.map((project, index) => (
               <GalleryItem 
-                key={project.id} 
+                key={project.id}
                 project={project} 
                 index={index}
                 onVideoClick={handleVideoClick}

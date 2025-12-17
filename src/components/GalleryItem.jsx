@@ -99,7 +99,7 @@ const GalleryItem = ({ project, index, onVideoClick }) => {
       {/* Content Section - Modern Design */}
       <div className="p-6 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950">
         {/* Title */}
-        <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-3 group-hover:text-deep-yellow transition-colors duration-300">
+        <h3 className="text-2xl font-sans font-bold text-gray-900 dark:text-white mb-3 group-hover:text-deep-yellow transition-colors duration-300">
           {project.title}
         </h3>
         

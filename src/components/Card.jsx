@@ -6,14 +6,16 @@ const Card = ({ children, className = '', hover = true, ...props }) => {
       whileHover={hover ? { y: -8, scale: 1.02 } : {}}
       className={`
         rounded-lg 
-        bg-white/80 dark:bg-gray-900/80 
+        bg-black/20 
         backdrop-blur-sm 
-        border border-gray-200 dark:border-gray-700
-        shadow-lg
+        border border-black/40
         transition-all duration-300
-        ${hover ? 'hover:border-deep-yellow hover:shadow-deep-yellow/20' : ''}
+        ${hover ? 'hover:bg-black/30 hover:border-black/60' : ''}
         ${className}
       `}
+      style={{
+        boxShadow: 'inset 0 0 0 1px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.2)',
+      }}
       {...props}
     >
       {children}

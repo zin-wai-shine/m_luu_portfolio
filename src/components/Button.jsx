@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 const Button = ({ 
   children, 
@@ -10,22 +10,37 @@ const Button = ({
   className = '',
   type = 'button'
 }) => {
-  const baseClasses = 'px-6 py-2.5 text-sm font-semibold transition-all duration-300 transform hover:scale-105'
+  const [isHovered, setIsHovered] = useState(false)
   
-  // Check if rounded-none is in className to remove border radius
-  const roundedClass = className.includes('rounded-none') ? 'rounded-none' : 'rounded-lg'
+  const baseClasses = 'px-8 py-3.5 text-sm font-light uppercase tracking-wider transition-all duration-300'
   
-  const variants = {
-    primary: 'bg-deep-yellow text-gray-900 hover:bg-deep-yellow-alt shadow-lg shadow-deep-yellow/50',
-    secondary: 'border-2 border-deep-yellow text-deep-yellow dark:text-deep-yellow hover:bg-deep-yellow hover:text-gray-900 dark:hover:text-gray-900',
-    outline: 'border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-gray-900'
+  // Always use rounded-full for pill shape
+  const roundedClass = 'rounded-full'
+  
+  // All variants use background with reduced opacity and golden yellow text
+  const buttonStyle = {
+    background: isHovered 
+      ? 'rgba(236, 184, 21, 0.2)' 
+      : 'rgba(236, 184, 21, 0.08)', // #ECB815 with reduced opacity
+    color: '#EDBB1C', // Golden yellow text
+    backdropFilter: isHovered ? 'blur(10px)' : 'blur(0px)',
+    WebkitBackdropFilter: isHovered ? 'blur(10px)' : 'blur(0px)',
+    boxShadow: isHovered 
+      ? '0 4px 20px rgba(236, 184, 21, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)' 
+      : 'none',
   }
 
-  const classes = `${baseClasses} ${roundedClass} ${variants[variant]} ${className}`
+  const classes = `${baseClasses} ${roundedClass} ${className}`
 
   if (to) {
     return (
-      <Link to={to} className={classes}>
+      <Link 
+        to={to} 
+        className={classes}
+        style={buttonStyle}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         {children}
       </Link>
     )
@@ -33,22 +48,31 @@ const Button = ({
 
   if (href) {
     return (
-      <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
+      <a 
+        href={href} 
+        className={classes}
+        style={buttonStyle}
+        target="_blank" 
+        rel="noopener noreferrer"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         {children}
       </a>
     )
   }
 
   return (
-    <motion.button
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+    <button
       type={type}
       onClick={onClick}
       className={classes}
+      style={buttonStyle}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       {children}
-    </motion.button>
+    </button>
   )
 }
 

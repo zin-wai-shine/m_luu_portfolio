@@ -47,18 +47,18 @@ const Experience = () => {
             <Card>
               <h2 className="text-2xl font-semibold text-deep-yellow mb-4">Professional Experience</h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                Works as a Production Management, Editor, Videographer & Camera Operator for overseas projects. Currently a Freelance Commercial TVC, Short film, Music Video Director, and Documentary maker.
-              </p>
+              Works as a Production Management, Editor, Videographer & Camera Operator for overseas projects. Currently a Freelance Commercial TVC, Short film, Music Video Director, and Documentary maker.
+            </p>
               <p className="text-gray-600 dark:text-gray-400">
-                With extensive experience across various production roles, I bring a comprehensive understanding of the entire filmmaking process, from initial concept to final delivery.
-              </p>
+              With extensive experience across various production roles, I bring a comprehensive understanding of the entire filmmaking process, from initial concept to final delivery.
+            </p>
             </Card>
           </motion.div>
 
           {/* Awards & Recognition */}
           <motion.div variants={itemVariants}>
             <div className="mb-8">
-              <h2 className="text-3xl md:text-4xl font-display mb-4 text-gray-900 dark:text-white">
+              <h2 className="text-3xl md:text-4xl font-sans mb-4 text-gray-900 dark:text-white">
                 Awards & Recognition
               </h2>
               <div className="w-24 h-1 bg-deep-yellow mb-6"></div>
@@ -74,9 +74,9 @@ const Experience = () => {
                   variants={itemVariants}
                 >
                   <Card className="border-l-4 border-l-deep-yellow">
-                    <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-4">
                       <div className="text-5xl">{award.icon}</div>
-                      <div className="flex-1">
+                    <div className="flex-1">
                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                           {award.title}
                         </h3>

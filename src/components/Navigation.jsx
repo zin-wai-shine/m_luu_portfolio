@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useTheme } from '../contexts/ThemeContext'
 
 const Navigation = () => {
   const location = useLocation()
+  const navigate = useNavigate()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const { isDark, toggleTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +24,6 @@ const Navigation = () => {
     { path: '/skills-education', label: 'Skills & Education' },
     { path: '/experience', label: 'Experience' },
     { path: '/portfolio', label: 'Portfolio' },
-    { path: '/contact', label: 'Contact' },
   ]
 
   const toggleMobileMenu = () => {
@@ -76,59 +74,73 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <Link 
             to="/" 
-            className="text-xl font-display text-deep-yellow tracking-wider hover:text-deep-yellow-alt transition-colors"
+            className="flex items-center gap-3 text-xl font-sans text-deep-yellow tracking-wider hover:text-deep-yellow-alt transition-colors group"
           >
-            M LUU
+            {/* Logo Design - LUU */}
+            <div className="relative flex items-center">
+              {/* LUU Text with enhanced styling */}
+              <span 
+                className="font-sans font-light uppercase tracking-[0.2em] text-2xl relative"
+                style={{
+                  textShadow: '0 0 20px rgba(237, 187, 28, 0.4), 0 0 40px rgba(237, 187, 28, 0.2)',
+                  letterSpacing: '0.15em',
+                }}
+              >
+                LUU
+              </span>
+              {/* Decorative line accent */}
+              <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow/60 to-transparent opacity-60 group-hover:opacity-100 transition-opacity"></div>
+            </div>
           </Link>
           
           <div className="flex items-center gap-4">
             {/* Desktop Navigation */}
             <ul className="hidden md:flex items-center space-x-8">
-              {navLinks.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className={`transition-colors duration-300 relative ${
-                      location.pathname === link.path
-                        ? 'text-deep-yellow font-semibold drop-shadow-sm'
+            {navLinks.map((link) => (
+              <li key={link.path}>
+                <Link
+                  to={link.path}
+                    className={`transition-colors duration-300 relative font-light ${
+                    location.pathname === link.path
+                        ? 'text-deep-yellow drop-shadow-sm'
                         : 'text-gray-800 dark:text-gray-200 hover:text-deep-yellow dark:hover:text-deep-yellow'
-                    }`}
-                  >
-                    {link.label}
-                    {location.pathname === link.path && (
-                      <motion.div
-                        layoutId="navbar-indicator"
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-deep-yellow"
-                      />
-                    )}
-                  </Link>
-                </li>
-              ))}
-              
-              {/* Dark Mode Toggle - After Contact */}
-              <li>
-                <button
-                  onClick={toggleTheme}
-                  className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-deep-yellow hover:text-gray-900 dark:hover:bg-deep-yellow dark:hover:text-gray-900 transition-all duration-300"
-                  aria-label="Toggle dark mode"
+                  }`}
                 >
-                  {isDark ? (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                  ) : (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                  )}
-                </button>
+                  {link.label}
+                </Link>
               </li>
-            </ul>
+            ))}
+              
+          </ul>
+          
+          {/* Contact Button with Pill Design */}
+          <button
+            onClick={() => navigate('/contact')}
+            className="hidden md:flex items-center justify-center px-8 py-3.5 rounded-full font-light text-sm uppercase tracking-wider transition-all duration-300 ml-8 contact-button-glass"
+            style={{
+              background: 'rgba(236, 184, 21, 0.08)', // #ECB815 with reduced opacity
+              color: '#EDBB1C', // Golden yellow text
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = 'rgba(236, 184, 21, 0.2)'
+              e.target.style.backdropFilter = 'blur(10px)'
+              e.target.style.WebkitBackdropFilter = 'blur(10px)'
+              e.target.style.boxShadow = '0 4px 20px rgba(236, 184, 21, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = 'rgba(236, 184, 21, 0.08)'
+              e.target.style.backdropFilter = 'blur(0px)'
+              e.target.style.WebkitBackdropFilter = 'blur(0px)'
+              e.target.style.boxShadow = 'none'
+            }}
+          >
+            Contact
+          </button>
 
-            {/* Mobile menu button */}
+          {/* Mobile menu button */}
             <button
               onClick={toggleMobileMenu}
-              className="md:hidden p-2 text-gray-800 dark:text-gray-200 hover:text-deep-yellow dark:hover:text-deep-yellow focus:outline-none"
+              className="md:hidden p-2 rounded-lg text-gray-800 dark:text-gray-200 hover:text-deep-yellow dark:hover:text-deep-yellow focus:outline-none"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -160,9 +172,9 @@ const Navigation = () => {
                   <Link
                     to={link.path}
                     onClick={closeMobileMenu}
-                    className={`block py-2 transition-colors duration-300 ${
+                    className={`block py-2 transition-colors duration-300 font-light ${
                       location.pathname === link.path
-                        ? 'text-deep-yellow font-semibold'
+                        ? 'text-deep-yellow'
                         : 'text-gray-800 dark:text-gray-200 hover:text-deep-yellow dark:hover:text-deep-yellow'
                     }`}
                   >
@@ -170,25 +182,6 @@ const Navigation = () => {
                   </Link>
                 </li>
               ))}
-              {/* Dark Mode Toggle - After Contact in Mobile Menu */}
-              <li>
-                <button
-                  onClick={toggleTheme}
-                  className="w-full flex items-center gap-3 py-2 text-gray-800 dark:text-gray-200 hover:text-deep-yellow dark:hover:text-deep-yellow transition-colors duration-300"
-                  aria-label="Toggle dark mode"
-                >
-                  <span>Dark Mode</span>
-                  {isDark ? (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                  ) : (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                  )}
-                </button>
-              </li>
             </ul>
           </motion.div>
         )}

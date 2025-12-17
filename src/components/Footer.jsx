@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-8 mt-20">
+    <footer className="py-8 mt-0 bg-black">
       <div className="container mx-auto px-4">
-        <div className="text-center text-gray-600 dark:text-gray-400 text-sm">
+        <div className="text-center text-gray-200 text-sm font-light">
           <p>&copy; {new Date().getFullYear()} M Luu (TZ). All rights reserved.</p>
           <p className="mt-2 text-deep-yellow">Creative Director / Director of Photography</p>
         </div>

@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'deep-yellow': '#F6C600',
+        'deep-yellow': '#EDBB1C',
         'deep-yellow-alt': '#EAB308',
         'light-bg': '#FAFAFA',
         'dark-bg': '#0A0A0A',
