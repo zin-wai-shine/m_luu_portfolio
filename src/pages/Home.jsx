@@ -85,7 +85,7 @@ const Home = () => {
     
     // Check if it's a Facebook URL - use iframe embed for working videos
     if (url.includes('facebook.com') || url.includes('fb.com')) {
-      return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&width=500&height=281`
+    return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&width=500&height=281`
     }
     
     return null
@@ -508,24 +508,24 @@ const Home = () => {
                         ) : (
                           <>
                             {!isUnavailable ? (
-                              <div className="absolute inset-0">
-                                <iframe
-                                  src={embedUrl}
-                                  width="100%"
-                                  height="100%"
-                                  style={{
-                                    border: 'none',
-                                    overflow: 'hidden',
-                                    pointerEvents: 'none',
-                                  }}
-                                  scrolling="no"
-                                  allow="encrypted-media"
-                                  title={`${project.title} preview`}
+                        <div className="absolute inset-0">
+                          <iframe
+                            src={embedUrl}
+                            width="100%"
+                            height="100%"
+                            style={{
+                              border: 'none',
+                              overflow: 'hidden',
+                              pointerEvents: 'none',
+                            }}
+                            scrolling="no"
+                            allow="encrypted-media"
+                            title={`${project.title} preview`}
                                   onError={() => {
                                     setUnavailableVideos(prev => new Set([...prev, project.id]))
                                   }}
-                                />
-                              </div>
+                          />
+                        </div>
                             ) : (
                               <>
                                 {/* Simple video camera icon for unavailable videos */}

@@ -193,11 +193,11 @@ const Activity = () => {
             animate={{ scale: 1 }}
             exit={{ scale: 0.9 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative max-w-5xl w-full max-h-[90vh]"
+            className="relative w-full h-full flex items-center justify-center"
           >
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute -top-12 right-0 text-white hover:text-deep-yellow transition-colors"
+              className="absolute top-4 right-4 text-white hover:text-deep-yellow transition-colors z-10"
               aria-label="Close modal"
             >
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -207,22 +207,8 @@ const Activity = () => {
             <img
               src={selectedImage.image}
               alt={selectedImage.title}
-              className="w-full h-full object-contain rounded-lg"
+              className="w-full h-auto max-h-[100vh] object-contain"
             />
-            <div className="mt-4 text-center">
-              <h3 
-                style={{ color: '#9DA3AF' }}
-                className="text-2xl font-light mb-2"
-              >
-                {selectedImage.title}
-              </h3>
-              <p 
-                style={{ color: '#9DA3AF' }}
-                className="text-base font-light"
-              >
-                {selectedImage.description}
-              </p>
-            </div>
           </motion.div>
         </motion.div>
       )}

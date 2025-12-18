@@ -41,9 +41,9 @@ const GalleryItem = ({ project, index, onVideoClick }) => {
     
     // Check if it's a Facebook URL - use iframe embed for working videos
     if (url.includes('facebook.com') || url.includes('fb.com')) {
-      return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&width=500&height=281`
-    }
-    
+    return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&width=500&height=281`
+  }
+
     return null
   }
 
@@ -81,19 +81,19 @@ const GalleryItem = ({ project, index, onVideoClick }) => {
             ) : (
               <>
                 {!videoUnavailable ? (
-                  <div className="absolute inset-0">
-                    <iframe
-                      src={embedUrl}
-                      width="100%"
-                      height="100%"
-                      style={{
-                        border: 'none',
-                        overflow: 'hidden',
-                        pointerEvents: 'none',
-                      }}
-                      scrolling="no"
-                      allow="encrypted-media"
-                      title={`${project.title} preview`}
+            <div className="absolute inset-0">
+              <iframe
+                src={embedUrl}
+                width="100%"
+                height="100%"
+                style={{
+                  border: 'none',
+                  overflow: 'hidden',
+                  pointerEvents: 'none',
+                }}
+                scrolling="no"
+                allow="encrypted-media"
+                title={`${project.title} preview`}
                       onError={() => setVideoUnavailable(true)}
                       onLoad={() => {
                         // Check after a delay if video loaded successfully
@@ -102,8 +102,8 @@ const GalleryItem = ({ project, index, onVideoClick }) => {
                           // This is a fallback - main detection is onError
                         }, 2000)
                       }}
-                    />
-                  </div>
+              />
+            </div>
                 ) : (
                   <>
                     {/* Simple video camera icon for unavailable videos */}

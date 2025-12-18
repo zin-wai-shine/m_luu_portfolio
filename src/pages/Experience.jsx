@@ -111,66 +111,66 @@ const Experience = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             {/* Left Column: Text Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ delay: 0.2 }}
+              className="mb-12"
             >
               <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="w-20 h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mb-10"
+                initial={{ width: 0 }}
+                whileInView={{ width: '80px' }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="mb-12"
+                transition={{ delay: 0.2, duration: 0.8 }}
+                style={{
+                  boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+                }}
+              ></motion.div>
+              <h2 
+                style={{ 
+                  color: '#9DA3AF',
+                  letterSpacing: '0.03em',
+                  textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
+                }}
+                className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight"
               >
-                <motion.div 
-                  className="w-20 h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mb-10"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: '80px' }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2, duration: 0.8 }}
-                  style={{
-                    boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
-                  }}
-                ></motion.div>
-                <h2 
-                  style={{ 
-                    color: '#9DA3AF',
-                    letterSpacing: '0.03em',
-                    textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
-                  }}
-                  className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight"
-                >
-                  My <span className="text-deep-yellow" style={{
-                    textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
-                  }}>Expertise</span>
-                </h2>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
+                My <span className="text-deep-yellow" style={{
+                  textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
+                }}>Expertise</span>
+              </h2>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
                 className="space-y-6"
+            >
+              <p 
+                style={{ 
+                  color: '#9DA3AF',
+                  textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
+                }}
+                className="text-lg md:text-xl leading-relaxed font-light"
               >
-                <p 
-                  style={{ 
-                    color: '#9DA3AF',
-                    textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
-                  }}
-                  className="text-lg md:text-xl leading-relaxed font-light"
-                >
-                  Works as a Production Management, Editor, Videographer & Camera Operator for overseas projects. Currently a Freelance Commercial TVC, Short film, Music Video Director, and Documentary maker.
-                </p>
-                <p 
-                  style={{ color: '#9DA3AF' }}
-                  className="text-lg md:text-xl leading-relaxed font-light"
-                >
-                  With extensive experience across various production roles, I bring a comprehensive understanding of the entire filmmaking process, from initial concept to final delivery.
-                </p>
-              </motion.div>
+                Works as a Production Management, Editor, Videographer & Camera Operator for overseas projects. Currently a Freelance Commercial TVC, Short film, Music Video Director, and Documentary maker.
+              </p>
+              <p 
+                style={{ color: '#9DA3AF' }}
+                className="text-lg md:text-xl leading-relaxed font-light"
+              >
+                With extensive experience across various production roles, I bring a comprehensive understanding of the entire filmmaking process, from initial concept to final delivery.
+              </p>
+            </motion.div>
             </motion.div>
 
             {/* Right Column: Image with Filter */}
@@ -237,7 +237,7 @@ const Experience = () => {
                   </Card>
                 </motion.div>
               ))}
-            </motion.div>
+          </motion.div>
 
           {/* Awards & Recognition Section */}
           <motion.div
@@ -302,17 +302,17 @@ const Experience = () => {
                     <div className="flex flex-col gap-4">
                       <div className="flex items-start justify-between gap-4">
                         <div className="text-5xl flex-shrink-0">{award.icon}</div>
-                        {award.year && (
-                          <span 
+                          {award.year && (
+                            <span 
                             className="text-deep-yellow font-light text-xl md:text-2xl flex-shrink-0"
-                            style={{
-                              textShadow: '0 0 20px rgba(237, 187, 28, 0.5)',
-                            }}
-                          >
-                            {award.year}
-                          </span>
-                        )}
-                      </div>
+                              style={{
+                                textShadow: '0 0 20px rgba(237, 187, 28, 0.5)',
+                              }}
+                            >
+                              {award.year}
+                            </span>
+                          )}
+                        </div>
                       <div className="space-y-3">
                         <h3 
                           style={{ color: '#9DA3AF' }}

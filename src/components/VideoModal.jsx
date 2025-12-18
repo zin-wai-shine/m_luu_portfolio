@@ -46,9 +46,9 @@ const VideoModal = ({ isOpen, onClose, videoUrl, title }) => {
     
     // Check if it's a Facebook URL
     if (url.includes('facebook.com') || url.includes('fb.com')) {
-      // Extract video ID from Facebook URL
+    // Extract video ID from Facebook URL
       const match = url.match(/videos\/(\d+)/) || url.match(/reel\/(\d+)/)
-      if (match && match[1]) {
+    if (match && match[1]) {
         return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&width=734&autoplay=true`
       }
       return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&width=734&autoplay=true`
@@ -95,15 +95,15 @@ const VideoModal = ({ isOpen, onClose, videoUrl, title }) => {
                       Video unavailable?
                     </button>
                   )}
-                  <button
-                    onClick={onClose}
-                    className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 transition-colors"
-                    aria-label="Close modal"
-                  >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
+                <button
+                  onClick={onClose}
+                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 transition-colors"
+                  aria-label="Close modal"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
                 </div>
               </div>
 
@@ -111,23 +111,23 @@ const VideoModal = ({ isOpen, onClose, videoUrl, title }) => {
               <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                 {embedUrl ? (
                   <>
-                    <iframe
-                      src={embedUrl}
-                      width="100%"
-                      height="100%"
-                      style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        border: 'none',
+                  <iframe
+                    src={embedUrl}
+                    width="100%"
+                    height="100%"
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      border: 'none',
                         filter: videoUnavailable ? 'blur(4px) grayscale(50%) brightness(0.5)' : 'none',
                         transition: 'filter 0.3s ease',
-                      }}
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                      allowFullScreen
-                      title={title}
+                    }}
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    allowFullScreen
+                    title={title}
                       onError={() => setVideoUnavailable(true)}
                     />
                     {/* Play button overlay when video unavailable */}

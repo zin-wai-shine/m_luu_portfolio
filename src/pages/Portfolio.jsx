@@ -293,50 +293,50 @@ const Portfolio = () => {
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column: Text Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Decorative accent line with glow */}
-              <motion.div 
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Decorative accent line with glow */}
+            <motion.div 
                 className="w-20 h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mb-10"
-                initial={{ width: 0 }}
-                animate={{ width: '80px' }}
-                transition={{ delay: 0.2, duration: 0.8 }}
+              initial={{ width: 0 }}
+              animate={{ width: '80px' }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              style={{
+                boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+              }}
+            ></motion.div>
+            
+            <h1 
+              style={{ 
+                color: '#9DA3AF',
+                letterSpacing: '0.03em',
+                textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
+              }}
+              className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight"
+            >
+              <span 
+                className="text-deep-yellow"
                 style={{
-                  boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+                  textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
                 }}
-              ></motion.div>
-              
-              <h1 
-                style={{ 
-                  color: '#9DA3AF',
-                  letterSpacing: '0.03em',
-                  textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
-                }}
-                className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight"
               >
-                <span 
-                  className="text-deep-yellow"
-                  style={{
-                    textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
-                  }}
-                >
-                  Projects
-                </span>
-              </h1>
-              <p 
-                style={{ 
-                  color: '#9DA3AF',
-                  textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
-                  letterSpacing: '0.15em',
-                }}
+                Projects
+              </span>
+            </h1>
+            <p 
+              style={{ 
+                color: '#9DA3AF',
+                textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
+                letterSpacing: '0.15em',
+              }}
                 className="text-lg md:text-xl lg:text-2xl leading-relaxed font-light"
-              >
-                Explore my creative work
-              </p>
-            </motion.div>
+            >
+              Explore my creative work
+            </p>
+          </motion.div>
 
             {/* Right Column: Camera Image */}
             <motion.div
