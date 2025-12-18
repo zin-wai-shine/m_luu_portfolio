@@ -113,151 +113,26 @@ const Activity = () => {
       {/* Activity Gallery Section */}
       <section className="py-20 px-4 bg-black relative">
         <div className="container mx-auto max-w-7xl">
-          {/* Highlight Images - Two Column Grid */}
-          {allActivities.highlights.length > 0 && (
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-0 mb-0"
-            >
-              {/* Left Column: Single Image (S__14155817.jpg) */}
-              {allActivities.highlights.filter(activity => activity.image.includes('S__14155817')).map((activity) => (
-                <motion.div
-                  key={activity.id}
-                  variants={itemVariants}
-                  className="relative group cursor-pointer overflow-hidden"
-                  onClick={() => setSelectedImage(activity)}
-                >
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={activity.image}
-                      alt={activity.title}
-                      className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 block"
-                      style={{
-                        display: 'block',
-                        margin: 0,
-                        padding: 0,
-                      }}
-                      onError={(e) => {
-                        e.target.style.display = 'none'
-                      }}
-                    />
-                    
-                    {/* Black filter from edges to center - starts full black and fades to center */}
-                    <div 
-                      className="absolute inset-0 pointer-events-none"
-                      style={{
-                        background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 1) 100%)',
-                      }}
-                    ></div>
-                    
-                    {/* Additional edge darkening from all sides - full black at edges */}
-                    <div 
-                      className="absolute inset-0 pointer-events-none"
-                      style={{
-                        background: `
-                          linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 8%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.8) 92%, rgba(0, 0, 0, 1) 100%),
-                          linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 8%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.8) 92%, rgba(0, 0, 0, 1) 100%)
-                        `,
-                      }}
-                    ></div>
-                    
-                    {/* Gradient Overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                </motion.div>
-              ))}
-
-              {/* Right Column: Two Images Stacked Vertically */}
-              <div className="flex flex-col">
-                {allActivities.highlights.filter(activity => !activity.image.includes('S__14155817')).slice(0, 2).map((activity) => (
-                  <motion.div
-                    key={activity.id}
-                    variants={itemVariants}
-                    className="relative group cursor-pointer overflow-hidden"
-                    onClick={() => setSelectedImage(activity)}
-                  >
-                    <div className="relative overflow-hidden">
-                      <img
-                        src={activity.image}
-                        alt={activity.title}
-                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 block"
-                        style={{
-                          display: 'block',
-                          margin: 0,
-                          padding: 0,
-                        }}
-                        onError={(e) => {
-                          e.target.style.display = 'none'
-                        }}
-                      />
-                      
-                      {/* Black filter from edges to center - starts full black and fades to center */}
-                      <div 
-                        className="absolute inset-0 pointer-events-none"
-                        style={{
-                          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 1) 100%)',
-                        }}
-                      ></div>
-                      
-                      {/* Additional edge darkening from all sides - full black at edges */}
-                      <div 
-                        className="absolute inset-0 pointer-events-none"
-                        style={{
-                          background: `
-                            linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 8%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.8) 92%, rgba(0, 0, 0, 1) 100%),
-                            linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 8%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.8) 92%, rgba(0, 0, 0, 1) 100%)
-                          `,
-                        }}
-                      ></div>
-                      
-                    {/* Gradient Overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                </motion.div>
-              ))}
-              </div>
-            </motion.div>
-          )}
-
-          {/* Regular Activity Images */}
+          {/* All Activity Images (Highlights first) - Masonry-style 4 Column Layout */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0"
+            className="columns-2 md:columns-3 lg:columns-4 gap-6 max-w-7xl mx-auto"
           >
-            {allActivities.regulars.map((activity, index) => {
-              // Varying sizes for different images - smaller variations
-              const sizeVariations = [
-                { colSpan: '', aspect: 'aspect-square' },
-                { colSpan: '', aspect: 'aspect-[4/5]' },
-                { colSpan: '', aspect: 'aspect-[5/4]' },
-                { colSpan: 'col-span-2', aspect: 'aspect-[2/1]' },
-                { colSpan: '', aspect: 'aspect-square' },
-                { colSpan: '', aspect: 'aspect-[3/4]' },
-                { colSpan: '', aspect: 'aspect-[4/3]' },
-                { colSpan: '', aspect: 'aspect-square' },
-                { colSpan: '', aspect: 'aspect-[5/6]' },
-              ]
-              
-              const variation = sizeVariations[index % sizeVariations.length]
-              
-              return (
+            {[...allActivities.highlights, ...allActivities.regulars].map((activity) => (
               <motion.div
                 key={activity.id}
                 variants={itemVariants}
-                className={`relative group cursor-pointer overflow-hidden ${variation.colSpan}`}
+                className="relative group cursor-pointer overflow-hidden rounded-2xl bg-[#050505] border border-white/5 shadow-lg shadow-black/40 mb-6 break-inside-avoid"
                 onClick={() => setSelectedImage(activity)}
               >
-                <div className={`relative overflow-hidden ${variation.aspect}`}>
+                <div className="relative overflow-hidden rounded-2xl">
                   <img
                     src={activity.image}
                     alt={activity.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 block"
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 block"
                     style={{
                       display: 'block',
                       margin: 0,
@@ -268,25 +143,6 @@ const Activity = () => {
                       e.target.style.display = 'none'
                     }}
                   />
-                  
-                  {/* Black filter from edges to center - starts full black and fades to center */}
-                  <div 
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 1) 100%)',
-                    }}
-                  ></div>
-                  
-                  {/* Additional edge darkening from all sides - full black at edges */}
-                  <div 
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      background: `
-                        linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 8%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.8) 92%, rgba(0, 0, 0, 1) 100%),
-                        linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 8%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.8) 92%, rgba(0, 0, 0, 1) 100%)
-                      `,
-                    }}
-                  ></div>
                   
                   {/* Gradient Overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -310,8 +166,7 @@ const Activity = () => {
                   </div>
                 </div>
               </motion.div>
-              )
-            })}
+            ))}
           </motion.div>
         </div>
         

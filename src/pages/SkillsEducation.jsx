@@ -23,7 +23,7 @@ const SkillsEducation = () => {
 
   const skills = [
     {
-      title: 'Cinema/Videography',
+      title: 'Cinematography / Steadicam Operator',
       level: 'Expert',
       description: 'Expert level in managing workflows from pre-production to post-production. Proficient in camera operation and lighting distinction.',
       icon: '🎬',

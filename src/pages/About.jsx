@@ -233,19 +233,19 @@ const About = () => {
                     alt="About"
                     className="w-full h-full object-cover mx-auto"
                     style={{
-                      filter: 'grayscale(100%) contrast(1.3) brightness(1.5)',
+                      filter: 'grayscale(100%) contrast(1.25) brightness(1.6)',
                     }}
                   />
                   {/* Black filter from left side - stronger */}
                   <div 
                     className="absolute inset-0"
                     style={{
-                      background: 'linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.1) 90%, transparent 100%)'
+                      background: 'linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.55) 30%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0.2) 70%, rgba(0, 0, 0, 0.05) 90%, transparent 100%)'
                     }}
                   ></div>
                   {/* Additional dark overlay for button-like effect */}
                   <div 
-                    className="absolute inset-0 bg-black/30"
+                    className="absolute inset-0 bg-black/20"
                   ></div>
                   {/* Cool overlay effects */}
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/20"></div>
@@ -316,7 +316,7 @@ const About = () => {
                 { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', label: 'Date of Birth', value: '5.5.1995' },
                 { icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z', label: 'Nationality', value: 'Burma' },
                 { icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129', label: 'Languages', value: 'English, Thai (Basic)' },
-                { icon: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', label: 'Position', value: 'Director, Cinematographer & Editor' },
+                { icon: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', label: 'Position', value: 'Director, Cinematographer & Steadicam Operator' },
               ].map((item, index) => (
                 <motion.div
                   key={index}
