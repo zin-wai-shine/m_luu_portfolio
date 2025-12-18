@@ -278,6 +278,22 @@ const Portfolio = () => {
       description: 'Music Festival Campaign',
       videoUrl: 'https://www.facebook.com/reel/1079991870621696',
     },
+    {
+      id: 33,
+      title: 'Hold It Tight ft. LiTa PanPan',
+      client: 'Awlele gugu',
+      category: 'Music Video',
+      description: 'Music Video Production',
+      videoUrl: 'https://www.youtube.com/watch?v=sfb2qJZUuvI',
+    },
+    {
+      id: 34,
+      title: 'A Myu A Ga Hte Hip Hop - Awlele Gu Gu | feat- Ong Lar (Soul)',
+      client: 'Awlele Gu Gu',
+      category: 'Music Video',
+      description: 'Music Video Production',
+      videoUrl: 'https://www.youtube.com/watch?v=U-VI4mmMVYE',
+    },
   ]
 
   const filters = ['All', 'TVC & Campaign', 'Music Video']

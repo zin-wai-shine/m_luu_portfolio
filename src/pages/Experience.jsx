@@ -9,7 +9,7 @@ const Experience = () => {
       description: 'Overseeing and coordinating all aspects of production from pre-production planning to final delivery.',
     },
     {
-      title: 'Editor & Videographer',
+      title: 'Dop & Editor',
       description: 'Creating compelling visual narratives through expert editing and cinematography.',
     },
     {
