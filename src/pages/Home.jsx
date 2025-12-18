@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { FaPlay } from 'react-icons/fa'
 import Button from '../components/Button'
 import SectionHeader from '../components/SectionHeader'
 import Card from '../components/Card'
@@ -17,7 +18,7 @@ const Home = () => {
       id: 1,
       title: 'Ooredoo Campaign',
       client: 'Ooredoo',
-      category: 'TVC',
+      category: 'TVC & Campaign',
       description: 'UPGRADE YOUR WORLD',
       videoUrl: 'https://www.facebook.com/OoredooMyanmar/videos/1537529373644332/',
     },
@@ -25,7 +26,7 @@ const Home = () => {
       id: 2,
       title: 'OPPO Global Launch',
       client: 'OPPO',
-      category: 'TVC',
+      category: 'TVC & Campaign',
       description: 'Find N3 Flip, Reno 11, A78',
       videoUrl: 'https://www.facebook.com/100076397719631/videos/603902335266693/',
     },
@@ -33,7 +34,7 @@ const Home = () => {
       id: 3,
       title: 'BYD EV CAR - GLOBAL TVC',
       client: 'BYD',
-      category: 'TVC',
+      category: 'TVC & Campaign',
       description: 'Global TVC Campaign',
       videoUrl: 'https://www.facebook.com/watch/?v=692763926316214&rdid=CLj7Ko9k3dci332V',
     },
@@ -41,6 +42,7 @@ const Home = () => {
 
   const [selectedVideo, setSelectedVideo] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [unavailableVideos, setUnavailableVideos] = useState(new Set())
 
   const handleVideoClick = (project) => {
     if (project.videoUrl) {
@@ -54,10 +56,39 @@ const Home = () => {
     setSelectedVideo(null)
   }
 
-  // Get Facebook video embed URL for thumbnail preview
+  // Extract video ID from YouTube URL
+  const getYouTubeVideoId = (url) => {
+    if (!url) return null
+    const patterns = [
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/,
+      /youtube\.com\/embed\/([^&\n?#]+)/,
+    ]
+    for (const pattern of patterns) {
+      const match = url.match(pattern)
+      if (match && match[1]) {
+        return match[1]
+      }
+    }
+    return null
+  }
+
+  // Get video embed URL for thumbnail preview
   const getFacebookEmbedUrl = (url) => {
     if (!url) return null
-    return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&width=500&height=281`
+    
+    // Check if it's a YouTube URL
+    const youtubeId = getYouTubeVideoId(url)
+    if (youtubeId) {
+      // Return YouTube thumbnail image URL for preview
+      return `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
+    }
+    
+    // Check if it's a Facebook URL - use iframe embed for working videos
+    if (url.includes('facebook.com') || url.includes('fb.com')) {
+      return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=false&width=500&height=281`
+    }
+    
+    return null
   }
 
   return (
@@ -195,7 +226,7 @@ const Home = () => {
             textShadow: '0 0 20px rgba(255,255,255,0.2), 0 0 40px rgba(255,255,255,0.1)',
           }}
         >
-          Creative Director <span className="text-deep-yellow mx-2">/</span> Director of Photography
+          Creative Director <span className="text-deep-yellow mx-2">/</span> Director of Photography <span className="text-deep-yellow mx-2">/</span> Steadicam Operator
         </motion.p>
 
         <motion.p
@@ -209,7 +240,7 @@ const Home = () => {
             textShadow: '0 0 15px rgba(255,255,255,0.15), 0 0 30px rgba(255,255,255,0.08)',
           }}
         >
-          I'm an artist, and branding expert with over <span className="text-deep-yellow font-normal text-lg md:text-xl drop-shadow-[0_0_15px_rgba(237,187,28,0.6)]">8 years</span> of professional experience in the film and video production industry.
+          I'm an artist, and branding expert with over <span className="text-deep-yellow font-normal text-lg md:text-xl drop-shadow-[0_0_15px_rgba(237,187,28,0.6)]">10 years</span> of professional experience in the film and video production industry. <span className="text-deep-yellow font-normal text-lg md:text-xl drop-shadow-[0_0_15px_rgba(237,187,28,0.6)]">Based in Thailand</span>.
         </motion.p>
         </motion.div>
 
@@ -292,7 +323,7 @@ const Home = () => {
                     textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
                   }}
                 >
-                  8 years of experience in filmmaking with a passion for visual storytelling. My background is in advertising production, TVC production, social media production, and food vlog production.
+                  10 years of experience in filmmaking with a passion for visual storytelling. My background is in advertising production, TVC production, social media production, and food vlog production.
                 </motion.p>
                 <motion.p 
                   className="text-base md:text-lg text-gray-400 leading-relaxed font-light"
@@ -334,7 +365,7 @@ const Home = () => {
               className="relative"
             >
               {/* About Me Image - Black & White Cool Design */}
-              <div className="relative overflow-hidden rounded-lg h-full">
+              <div className="relative overflow-hidden rounded-lg h-full max-w-[90%] mx-auto">
                 <img
                   src={aboutMeImage}
                   alt="About Me"
@@ -343,13 +374,15 @@ const Home = () => {
                     filter: 'grayscale(100%) contrast(1.3) brightness(0.9)',
                   }}
                 />
+                {/* Right to left gradient filter */}
+                <div className="absolute inset-0 bg-gradient-to-l from-black/40 via-black/20 to-transparent"></div>
                 {/* Cool overlay effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/25"></div>
                 {/* Subtle glow effect */}
                 <div 
                   className="absolute inset-0"
                   style={{
-                    boxShadow: 'inset 0 0 50px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.5)',
+                    boxShadow: 'inset 0 0 50px rgba(0, 0, 0, 0.35), 0 0 30px rgba(0, 0, 0, 0.55)',
                   }}
                 ></div>
               </div>
@@ -359,9 +392,9 @@ const Home = () => {
         
         {/* Black filter at base/bottom */}
         <div 
-          className="absolute bottom-0 left-0 right-0 h-10"
+          className="absolute bottom-0 left-0 right-0 h-40"
           style={{
-            background: 'linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.4) 60%, transparent 100%)'
+            background: 'linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 30%, rgba(0, 0, 0, 0.45) 60%, transparent 100%)'
           }}
         ></div>
       </section>
@@ -440,6 +473,8 @@ const Home = () => {
           >
             {featuredProjects.map((project, index) => {
               const embedUrl = project.videoUrl ? getFacebookEmbedUrl(project.videoUrl) : null
+              const isYouTube = project.videoUrl ? getYouTubeVideoId(project.videoUrl) !== null : false
+              const isUnavailable = unavailableVideos.has(project.id)
               
               return (
                 <motion.div
@@ -452,23 +487,67 @@ const Home = () => {
                   <Card hover={false} className="cursor-pointer overflow-hidden" onClick={() => project.videoUrl && handleVideoClick(project)}>
                     {/* Video Preview Area */}
                     <div className="aspect-video bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-                      {/* Facebook Video Embed for Thumbnail Preview */}
+                      {/* Video Thumbnail Preview */}
                       {embedUrl ? (
-                        <div className="absolute inset-0">
-                          <iframe
-                            src={embedUrl}
-                            width="100%"
-                            height="100%"
-                            style={{
-                              border: 'none',
-                              overflow: 'hidden',
-                              pointerEvents: 'none',
-                            }}
-                            scrolling="no"
-                            allow="encrypted-media"
-                            title={`${project.title} preview`}
-                          />
-                        </div>
+                        isYouTube ? (
+                          <div className="absolute inset-0">
+                            <img
+                              src={embedUrl}
+                              alt={`${project.title} thumbnail`}
+                              className="w-full h-full object-cover"
+                            />
+                            {/* Dark blurred overlay */}
+                            <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+                            {/* Play button overlay for YouTube */}
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <div className="w-[38px] h-[38px] border-2 border-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+                                <FaPlay className="w-4 h-4 text-white ml-1" />
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          <>
+                            {!isUnavailable ? (
+                              <div className="absolute inset-0">
+                                <iframe
+                                  src={embedUrl}
+                                  width="100%"
+                                  height="100%"
+                                  style={{
+                                    border: 'none',
+                                    overflow: 'hidden',
+                                    pointerEvents: 'none',
+                                  }}
+                                  scrolling="no"
+                                  allow="encrypted-media"
+                                  title={`${project.title} preview`}
+                                  onError={() => {
+                                    setUnavailableVideos(prev => new Set([...prev, project.id]))
+                                  }}
+                                />
+                              </div>
+                            ) : (
+                              <>
+                                {/* Simple video camera icon for unavailable videos */}
+                                <div className="absolute inset-0 bg-gray-800 flex items-center justify-center">
+                                  <svg 
+                                    className="w-24 h-24 text-gray-500 opacity-50" 
+                                    fill="none" 
+                                    viewBox="0 0 24 24" 
+                                    stroke="currentColor"
+                                  >
+                                    <path 
+                                      strokeLinecap="round" 
+                                      strokeLinejoin="round" 
+                                      strokeWidth={1.5} 
+                                      d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" 
+                                    />
+                                  </svg>
+                                </div>
+                              </>
+                            )}
+                          </>
+                        )
                       ) : (
                         <div className="absolute inset-0 flex items-center justify-center">
                           <svg className="w-16 h-16 text-gray-600 dark:text-gray-500 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">

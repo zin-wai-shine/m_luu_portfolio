@@ -24,6 +24,7 @@ const Navigation = () => {
     { path: '/skills-education', label: 'Skills & Education' },
     { path: '/experience', label: 'Experience' },
     { path: '/portfolio', label: 'Projects' },
+    { path: '/activity', label: 'Activity' },
   ]
 
   const toggleMobileMenu = () => {

@@ -14,6 +14,11 @@ const SkillsEducation = () => {
       institution: 'Vision Creative Academy',
       description: 'Taught film-related concepts, proper film workflows, and working with film production centers.',
     },
+    {
+      year: '2025',
+      institution: 'Visualize Unwritten Workshop ( JOKER , HANGOVER )',
+      description: 'Hollywood DP - Lawrence Shar',
+    },
   ]
 
   const skills = [
@@ -120,7 +125,7 @@ const SkillsEducation = () => {
               </motion.div>
             </div>
             
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {education.map((edu, index) => (
                 <motion.div
                   key={index}
@@ -130,17 +135,17 @@ const SkillsEducation = () => {
                   transition={{ delay: 0.3 + index * 0.2 }}
                   className="relative"
                 >
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 p-6 lg:p-8 bg-black/10 backdrop-blur-sm rounded-lg hover:bg-black/20 transition-all">
-                    <div className="flex-1 space-y-3">
+                  <div className="flex flex-col h-full p-6 lg:p-8 bg-black/10 backdrop-blur-sm rounded-lg hover:bg-black/20 transition-all">
+                    <div className="flex-1 space-y-3 mb-4">
                       <h3 
                         style={{ color: '#9DA3AF' }}
-                        className="text-2xl md:text-3xl font-light"
+                        className="text-xl md:text-2xl font-light"
                       >
                         {edu.institution}
                       </h3>
                       {edu.degree && (
                         <p 
-                          className="text-deep-yellow font-light text-lg md:text-xl"
+                          className="text-deep-yellow font-light text-base md:text-lg"
                           style={{
                             textShadow: '0 0 20px rgba(237, 187, 28, 0.5)',
                           }}
@@ -150,14 +155,14 @@ const SkillsEducation = () => {
                       )}
                       <p 
                         style={{ color: '#9DA3AF' }}
-                        className="text-lg md:text-xl leading-relaxed font-light"
+                        className="text-sm md:text-base leading-relaxed font-light"
                       >
                         {edu.description}
                       </p>
                     </div>
-                    <div className="flex-shrink-0">
+                    <div className="mt-auto">
                       <span 
-                        className="text-deep-yellow font-light text-3xl md:text-4xl block"
+                        className="text-deep-yellow font-light text-2xl md:text-3xl block text-right"
                         style={{
                           textShadow: '0 0 20px rgba(237, 187, 28, 0.5)',
                         }}

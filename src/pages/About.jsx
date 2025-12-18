@@ -18,7 +18,7 @@ const About = () => {
   }
 
   const stats = [
-    { label: 'Years Experience', value: '8+' },
+    { label: 'Years Experience', value: '10+' },
     { label: 'Projects Completed', value: '100+' },
     { label: 'Awards Won', value: '5+' },
   ]
@@ -78,7 +78,7 @@ const About = () => {
               }}
               className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed font-light"
             >
-              8 years of experience in filmmaking with a passion for visual storytelling
+              10 years of experience in filmmaking with a passion for visual storytelling
             </p>
           </motion.div>
 
@@ -169,7 +169,7 @@ const About = () => {
                   }}
                   className="text-lg md:text-xl leading-relaxed font-light"
                 >
-                  My background is in advertising production, TVC production, social media production, and food vlog production. Seeking new challenges, collaborations, and opportunities. I am passionate about contributing with my skills and bringing ideas to life.
+                  With 10 years of experience, my background is in advertising production, TVC production, social media production, and food vlog production. Seeking new challenges, collaborations, and opportunities. I am passionate about contributing with my skills and bringing ideas to life.
                 </p>
                 <p 
                   style={{ color: '#9DA3AF' }}
