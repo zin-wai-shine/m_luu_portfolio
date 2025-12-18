@@ -13,7 +13,7 @@ const Experience = () => {
       description: 'Creating compelling visual narratives through expert editing and cinematography.',
     },
     {
-      title: 'Camera Operator',
+      title: 'Camera Steadicam Operator',
       description: 'Operating cameras for overseas projects, capturing cinematic footage with precision.',
     },
     {
@@ -162,7 +162,7 @@ const Experience = () => {
                 }}
                 className="text-lg md:text-xl leading-relaxed font-light"
               >
-                Works as a Production Management, Editor, Videographer & Camera Operator for overseas projects. Currently a Freelance Commercial TVC, Short film, Music Video Director, and Documentary maker.
+                Works as a Production Management, Editor, Videographer & Camera Steadicam Operator for overseas projects. Currently a Freelance Commercial TVC, Short film, Music Video Director, and Documentary maker.
               </p>
               <p 
                 style={{ color: '#9DA3AF' }}
