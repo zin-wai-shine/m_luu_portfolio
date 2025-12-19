@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   width="483.04589154"
+   height="207.019667803" viewBox="0 0 630.0 270.0"
+   sodipodi:docname="MPT.svg">
+  <title
+     id="title3769">MPT</title>
+  <metadata
+     id="metadata2991">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>MPT</dc:title>
+        <dc:source>http://www.mpt.com.mm</dc:source>
+        <dc:description>New Logo of MPT</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2989" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     id="namedview2987"
+     showgrid="false"
+     inkscape:zoom="0.99668384"
+     inkscape:cx="341.7658"
+     inkscape:cy="169.85974"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2985"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <g
+     id="g3003"
+     transform="matrix(0.37378855,0,0,0.37378855,1.4855243,126.85863)">
+    <path
+       inkscape:connector-curvature="0"
+       id="path2995"
+       d="m 163.7364,-323.79307 102.33938,-0.50167 -157.52237,265.88171 106.85434,179.0939 -51.16968,85.78448 L 8.2206916,-59.91802 z"
+       style="fill:#ffc800;fill-opacity:1;stroke:none" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3767"
+       d="M 265.59649,-322.98889 420.61054,-58.11051 315.76285,120.98339 366.43087,377.33349 265.59649,205.76454 164.76211,206.2662 320.77949,-58.11051 214.92847,-238.70941 z"
+       style="fill:#004c92;fill-opacity:1;stroke:none" />
+  </g>
+  <path
+     style="fill:#140d0f;fill-opacity:1;stroke:none"
+     d="m 170.9137,32.760193 0.45459,154.104877 29.09354,0 0,-92.281091 46.82243,52.732051 49.09536,-54.095811 0,94.099441 28.63895,-0.4546 0.4546,-153.65028 -7.72798,0 -70.8533,76.82515 -67.79563,-76.82515 z"
+     id="path3011"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccccccccc" />
+  <path
+     style="fill:#140d0f;fill-opacity:1;stroke:none"
+     d="m 349.65625,33.21478 0.10727,153.45946 28.98648,-0.27196 0,-66.09823 54.72973,-0.16275 c 61.45125,-12.88895 34.7308,-91.109037 -0.16723,-86.92652 z m 80.46875,25 c 16.87272,4.635137 22.73249,25.434513 0.51689,36.8125 L 379.21875,95.93353 378.75,58.65228 z"
+     id="path3785"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccccccccc" />
+  <path
+     style="fill:#140d0f;fill-opacity:1;stroke:none"
+     d="m 481.22422,33.21478 0.14403,26.820613 54.40637,0 -0.90917,126.603117 27.9295,0 0.70946,-126.603117 53.1866,-0.454587 -0.45453,-26.366026 z"
+     id="path3795"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccccc" />
+</svg>

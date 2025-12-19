@@ -280,6 +280,14 @@ const Portfolio = () => {
     },
     {
       id: 33,
+      title: 'Good Lady',
+      client: 'Good Lady',
+      category: 'TVC & Campaign',
+      description: 'TVC Production',
+      videoUrl: 'https://www.facebook.com/goodladymyanmar/videos/628524473115885/?fs=e&mibextid=wwXIfr&rdid=A5tw8hYrwpK2PTfM#',
+    },
+    {
+      id: 34,
       title: 'Hold It Tight ft. LiTa PanPan',
       client: 'Awlele gugu',
       category: 'Music Video',
@@ -287,7 +295,7 @@ const Portfolio = () => {
       videoUrl: 'https://www.youtube.com/watch?v=sfb2qJZUuvI',
     },
     {
-      id: 34,
+      id: 35,
       title: 'A Myu A Ga Hte Hip Hop - Awlele Gu Gu | feat- Ong Lar (Soul)',
       client: 'Awlele Gu Gu',
       category: 'Music Video',
