@@ -90,15 +90,29 @@ const SkillsEducation = () => {
                 ></motion.div>
                 <h2 
                   style={{ 
-                    color: '#9DA3AF',
                     letterSpacing: '0.03em',
-                    textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
                   }}
                   className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight"
                 >
-                  <span className="text-deep-yellow" style={{
-                    textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
-                  }}>Education</span>
+                  <motion.span 
+                    style={{
+                      background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                      backgroundSize: '200% 100%',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}
+                    animate={{
+                      backgroundPosition: ['200% 0', '-200% 0'],
+                    }}
+                    transition={{
+                      duration: 10,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  >
+                    Education
+                  </motion.span>
                 </h2>
               </motion.div>
 
@@ -110,18 +124,56 @@ const SkillsEducation = () => {
                 transition={{ duration: 0.8 }}
                 className="flex justify-center lg:justify-end items-center"
               >
-                <motion.img
-                  src={skillBannerImage}
-                  alt="Education"
-                  className="max-w-full h-auto"
-                  style={{
-                    filter: 'grayscale(100%) contrast(1.2) brightness(0.9)',
-                  }}
+                <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2, duration: 0.8 }}
-                />
+                  className="relative overflow-hidden"
+                >
+                  <img
+                    src={skillBannerImage}
+                    alt="Education"
+                    className="max-w-full h-auto"
+                    style={{
+                      filter: 'grayscale(100%) contrast(1.2) brightness(0.6)',
+                    }}
+                  />
+                  {/* Glass shimmer wave effect */}
+                  <motion.div
+                    className="absolute inset-0"
+                    style={{
+                      background: 'linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%)',
+                      backgroundSize: '200% 200%',
+                      mixBlendMode: 'overlay',
+                    }}
+                    animate={{
+                      backgroundPosition: ['200% 0', '-200% 0'],
+                    }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+                  {/* Additional 3D depth effect with wave */}
+                  <motion.div
+                    className="absolute inset-0"
+                    style={{
+                      background: 'linear-gradient(120deg, transparent 25%, rgba(255, 255, 255, 0.15) 45%, transparent 65%)',
+                      backgroundSize: '250% 250%',
+                      mixBlendMode: 'soft-light',
+                    }}
+                    animate={{
+                      backgroundPosition: ['-250% 0', '250% 0'],
+                    }}
+                    transition={{
+                      duration: 10,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+                </motion.div>
               </motion.div>
             </div>
             
@@ -203,20 +255,48 @@ const SkillsEducation = () => {
               ></motion.div>
               <h2 
                 style={{ 
-                  color: '#9DA3AF',
                   letterSpacing: '0.03em',
-                  textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
                 }}
                 className="text-5xl md:text-6xl lg:text-7xl font-light mb-10 tracking-tight"
               >
-                Personal <span 
-                  className="text-deep-yellow"
+                <motion.span
                   style={{
-                    textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
+                    background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(237, 187, 28, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
+                    backgroundSize: '200% 100%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                  animate={{
+                    backgroundPosition: ['200% 0', '-200% 0'],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                >
+                  Personal{' '}
+                </motion.span>
+                <motion.span 
+                  style={{
+                    background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                    backgroundSize: '200% 100%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                  animate={{
+                    backgroundPosition: ['200% 0', '-200% 0'],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "linear",
                   }}
                 >
                   Skills
-                </span>
+                </motion.span>
               </h2>
             </motion.div>
             

@@ -47,30 +47,37 @@ const Activity = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.02,
+        delayChildren: 0.1,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.4,
+      }
+    },
   }
 
   return (
     <div className="min-h-screen pt-24 pb-20 bg-black">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden bg-black">
+      <section className="relative py-8 px-4 overflow-hidden bg-black">
         <div className="container mx-auto max-w-7xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-left mb-4"
           >
             {/* Decorative accent line with glow */}
             <motion.div 
-              className="w-20 h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mx-auto mb-10"
+              className="w-20 h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mb-10"
               initial={{ width: 0 }}
               animate={{ width: '80px' }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -81,20 +88,29 @@ const Activity = () => {
             
             <h1 
               style={{ 
-                color: '#9DA3AF',
                 letterSpacing: '0.03em',
-                textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
               }}
               className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight"
             >
-              <span 
-                className="text-deep-yellow"
+              <motion.span 
                 style={{
-                  textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
+                  background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                  backgroundSize: '200% 100%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+                animate={{
+                  backgroundPosition: ['200% 0', '-200% 0'],
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "linear",
                 }}
               >
                 Activity
-              </span>
+              </motion.span>
             </h1>
             <p 
               style={{ 
@@ -102,7 +118,7 @@ const Activity = () => {
                 textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
                 letterSpacing: '0.15em',
               }}
-              className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed font-light"
+              className="text-lg md:text-xl lg:text-2xl max-w-3xl leading-relaxed font-light"
             >
               Behind the scenes and personal moments
             </p>
@@ -111,14 +127,14 @@ const Activity = () => {
       </section>
 
       {/* Activity Gallery Section */}
-      <section className="py-20 px-4 bg-black relative">
+      <section className="pt-4 pb-8 px-4 bg-black relative">
         <div className="container mx-auto max-w-7xl">
           {/* All Activity Images (Highlights first) - Masonry-style 4 Column Layout */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             className="columns-2 md:columns-3 lg:columns-4 gap-6 max-w-7xl mx-auto"
           >
             {[...allActivities.highlights, ...allActivities.regulars].map((activity) => (

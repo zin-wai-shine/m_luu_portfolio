@@ -186,25 +186,48 @@ const Home = () => {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="text-5xl md:text-7xl lg:text-8xl font-sans mb-8 tracking-tight"
         >
-          <span 
-            style={{ color: '#9DA3AF' }}
-            className="font-light drop-shadow-[0_4px_20px_rgba(0,0,0,0.9),0_0_40px_rgba(0,0,0,0.5)]"
+          <motion.span 
+            className="font-light"
             style={{
-              textShadow: '0 0 30px rgba(255,255,255,0.3), 0 0 60px rgba(255,255,255,0.15)',
+              background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(237, 187, 28, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
+              backgroundSize: '200% 100%',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
               letterSpacing: '0.05em',
+            }}
+            animate={{
+              backgroundPosition: ['200% 0', '-200% 0'],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "linear",
             }}
           >
             M
-          </span>
-          <span 
-            className="mx-2 md:mx-3 text-gradient font-light tracking-wider"
+          </motion.span>
+          <motion.span 
+            className="mx-2 md:mx-3 font-light tracking-wider"
             style={{
-              textShadow: '0 0 40px rgba(237,187,28,0.6), 0 0 80px rgba(237,187,28,0.3)',
+              background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+              backgroundSize: '200% 100%',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
               letterSpacing: '0.08em',
+            }}
+            animate={{
+              backgroundPosition: ['200% 0', '-200% 0'],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "linear",
             }}
           >
             LUU
-          </span>
+          </motion.span>
         </motion.h1>
           
         {/* Modern decorative line with glow */}
@@ -294,22 +317,51 @@ const Home = () => {
               ></motion.div>
               
               <h2 
-                style={{ color: '#9DA3AF' }}
                 className="text-5xl md:text-6xl lg:text-7xl font-light mb-10 tracking-tight relative"
                 style={{
                   letterSpacing: '0.03em',
-                  textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
                 }}
               >
-                <span className="relative z-10">About </span>
-                <span 
-                  className="text-deep-yellow relative z-10"
+                <motion.span
+                  className="relative z-10"
                   style={{
-                    textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
+                    background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(237, 187, 28, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
+                    backgroundSize: '200% 100%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                  animate={{
+                    backgroundPosition: ['200% 0', '-200% 0'],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                >
+                  About{' '}
+                </motion.span>
+                <motion.span 
+                  className="relative z-10"
+                  style={{
+                    background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                    backgroundSize: '200% 100%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                  animate={{
+                    backgroundPosition: ['200% 0', '-200% 0'],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "linear",
                   }}
                 >
                   Me
-                </span>
+                </motion.span>
               </h2>
               
               <div className="space-y-7 mb-12 max-w-2xl relative z-10">
@@ -423,22 +475,51 @@ const Home = () => {
             ></motion.div>
             
             <h2 
-              style={{ color: '#9DA3AF' }}
               className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 tracking-tight relative"
               style={{
                 letterSpacing: '0.03em',
-                textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
               }}
             >
-              <span className="relative z-10">Featured </span>
-              <span 
-                className="text-deep-yellow relative z-10"
+              <motion.span
+                className="relative z-10"
                 style={{
-                  textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
+                  background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(237, 187, 28, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
+                  backgroundSize: '200% 100%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+                animate={{
+                  backgroundPosition: ['200% 0', '-200% 0'],
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              >
+                Featured{' '}
+              </motion.span>
+              <motion.span 
+                className="relative z-10"
+                style={{
+                  background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                  backgroundSize: '200% 100%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+                animate={{
+                  backgroundPosition: ['200% 0', '-200% 0'],
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "linear",
                 }}
               >
                 Projects
-              </span>
+              </motion.span>
             </h2>
             
             <motion.p 

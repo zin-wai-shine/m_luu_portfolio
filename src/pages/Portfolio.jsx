@@ -335,20 +335,29 @@ const Portfolio = () => {
             
             <h1 
               style={{ 
-                color: '#9DA3AF',
                 letterSpacing: '0.03em',
-                textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
               }}
               className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight"
             >
-              <span 
-                className="text-deep-yellow"
+              <motion.span 
                 style={{
-                  textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
+                  background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                  backgroundSize: '200% 100%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
                 }}
+                animate={{
+                  backgroundPosition: ['200% 0', '-200% 0'],
+                }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
               >
                 Projects
-              </span>
+              </motion.span>
             </h1>
             <p 
               style={{ 
@@ -369,7 +378,7 @@ const Portfolio = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="hidden lg:block flex justify-center items-center"
             >
-              <div className="relative w-3/4">
+              <div className="relative w-3/4 overflow-hidden">
                 <img
                   src={blackVdCameraImage}
                   alt="Camera Equipment"
@@ -380,6 +389,40 @@ const Portfolio = () => {
                 />
                 {/* Subtle overlay effect */}
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/5"></div>
+                {/* Glass shimmer wave effect */}
+                <motion.div
+                  className="absolute inset-0"
+                  style={{
+                    background: 'linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%)',
+                    backgroundSize: '200% 200%',
+                    mixBlendMode: 'overlay',
+                  }}
+                  animate={{
+                    backgroundPosition: ['200% 0', '-200% 0'],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                />
+                {/* Additional 3D depth effect with wave */}
+                <motion.div
+                  className="absolute inset-0"
+                  style={{
+                    background: 'linear-gradient(120deg, transparent 25%, rgba(255, 255, 255, 0.15) 45%, transparent 65%)',
+                    backgroundSize: '250% 250%',
+                    mixBlendMode: 'soft-light',
+                  }}
+                  animate={{
+                    backgroundPosition: ['-250% 0', '250% 0'],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                />
               </div>
             </motion.div>
           </div>

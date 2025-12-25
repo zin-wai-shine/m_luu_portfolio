@@ -54,21 +54,48 @@ const About = () => {
             
             <h1 
               style={{ 
-                color: '#9DA3AF',
                 letterSpacing: '0.03em',
-                textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
               }}
-              className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight"
+              className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight relative"
             >
-              Creative Director &<br />
-              <span 
-                className="text-deep-yellow"
+              <motion.span
                 style={{
-                  textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
+                  background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(237, 187, 28, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
+                  backgroundSize: '200% 100%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+                animate={{
+                  backgroundPosition: ['200% 0', '-200% 0'],
+                }}
+                transition={{
+                  duration: 15,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              >
+                Creative Director &<br />
+              </motion.span>
+              <motion.span 
+                style={{
+                  background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                  backgroundSize: '200% 100%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+                animate={{
+                  backgroundPosition: ['200% 0', '-200% 0'],
+                }}
+                transition={{
+                  duration: 15,
+                  repeat: Infinity,
+                  ease: "linear",
                 }}
               >
                 Filmmaker
-              </span>
+              </motion.span>
             </h1>
             <p 
               style={{ 
@@ -143,15 +170,48 @@ const About = () => {
                 ></motion.div>
                 <h2 
                   style={{ 
-                    color: '#9DA3AF',
                     letterSpacing: '0.03em',
-                    textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
                   }}
                   className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight"
                 >
-                  My <span className="text-deep-yellow" style={{
-                    textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
-                  }}>Story</span>
+                  <motion.span
+                    style={{
+                      background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(237, 187, 28, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
+                      backgroundSize: '200% 100%',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}
+                    animate={{
+                      backgroundPosition: ['200% 0', '-200% 0'],
+                    }}
+                    transition={{
+                      duration: 15,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  >
+                    My{' '}
+                  </motion.span>
+                  <motion.span 
+                    style={{
+                      background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                      backgroundSize: '200% 100%',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}
+                    animate={{
+                      backgroundPosition: ['200% 0', '-200% 0'],
+                    }}
+                    transition={{
+                      duration: 15,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  >
+                    Story
+                  </motion.span>
                 </h2>
               </motion.div>
               
@@ -226,7 +286,7 @@ const About = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3, duration: 0.8 }}
-                  className="relative"
+                  className="relative overflow-hidden"
                 >
                   <img
                     src={aboutAminPageImage}
@@ -249,6 +309,40 @@ const About = () => {
                   ></div>
                   {/* Cool overlay effects */}
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/20"></div>
+                  {/* Glass shimmer wave effect */}
+                  <motion.div
+                    className="absolute inset-0"
+                    style={{
+                      background: 'linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%)',
+                      backgroundSize: '200% 200%',
+                      mixBlendMode: 'overlay',
+                    }}
+                    animate={{
+                      backgroundPosition: ['200% 0', '-200% 0'],
+                    }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
+                  {/* Additional 3D depth effect with wave */}
+                  <motion.div
+                    className="absolute inset-0"
+                    style={{
+                      background: 'linear-gradient(120deg, transparent 25%, rgba(255, 255, 255, 0.15) 45%, transparent 65%)',
+                      backgroundSize: '250% 250%',
+                      mixBlendMode: 'soft-light',
+                    }}
+                    animate={{
+                      backgroundPosition: ['-250% 0', '250% 0'],
+                    }}
+                    transition={{
+                      duration: 10,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  />
                   {/* Subtle glow effect */}
                   <div 
                     className="absolute inset-0"
@@ -300,15 +394,48 @@ const About = () => {
               ></motion.div>
               <h3 
                 style={{ 
-                  color: '#9DA3AF',
                   letterSpacing: '0.03em',
-                  textShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
                 }}
                 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight"
               >
-                Personal <span className="text-deep-yellow" style={{
-                  textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
-                }}>Details</span>
+                <motion.span
+                  style={{
+                    background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(237, 187, 28, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
+                    backgroundSize: '200% 100%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                  animate={{
+                    backgroundPosition: ['200% 0', '-200% 0'],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                >
+                  Personal{' '}
+                </motion.span>
+                <motion.span 
+                  style={{
+                    background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                    backgroundSize: '200% 100%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                  animate={{
+                    backgroundPosition: ['200% 0', '-200% 0'],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                >
+                  Details
+                </motion.span>
               </h3>
             </motion.div>
             <div className="flex flex-wrap gap-4 w-full">
