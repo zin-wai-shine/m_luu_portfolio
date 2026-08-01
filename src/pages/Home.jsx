@@ -16,6 +16,22 @@ const Home = () => {
   const featuredProjects = [
     {
       id: 1,
+      title: 'QUEENS - FALL IN LOVE',
+      client: 'QUEENS',
+      category: 'Music Video',
+      description: 'Official Music Video Production',
+      videoUrl: 'https://www.youtube.com/watch?v=ApV3y-YzZxM',
+    },
+    {
+      id: 2,
+      title: 'Makro x MILLI - LIVE LIKE A PRO',
+      client: 'Makro × MILLI',
+      category: 'Music Video',
+      description: 'Official Music Video Production',
+      videoUrl: 'https://www.youtube.com/watch?v=MPePWnWx4IE',
+    },
+    {
+      id: 3,
       title: 'Ooredoo Campaign',
       client: 'Ooredoo',
       category: 'TVC & Campaign',
@@ -23,7 +39,7 @@ const Home = () => {
       videoUrl: 'https://www.facebook.com/OoredooMyanmar/videos/1537529373644332/',
     },
     {
-      id: 2,
+      id: 4,
       title: 'OPPO Global Launch',
       client: 'OPPO',
       category: 'TVC & Campaign',
@@ -31,7 +47,7 @@ const Home = () => {
       videoUrl: 'https://www.facebook.com/100076397719631/videos/603902335266693/',
     },
     {
-      id: 3,
+      id: 5,
       title: 'BYD EV CAR - GLOBAL TVC',
       client: 'BYD',
       category: 'TVC & Campaign',
