@@ -94,25 +94,17 @@ const SkillsEducation = () => {
                   }}
                   className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight"
                 >
-                  <motion.span 
+                  <span 
                     style={{
-                      background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
-                      backgroundSize: '200% 100%',
+                      background: 'linear-gradient(90deg, #FF4D4D 0%, #D83030 50%, #FF1A1A 100%)',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
                       backgroundClip: 'text',
-                    }}
-                    animate={{
-                      backgroundPosition: ['200% 0', '-200% 0'],
-                    }}
-                    transition={{
-                      duration: 10,
-                      repeat: Infinity,
-                      ease: "linear",
+                      filter: 'drop-shadow(0 0 20px rgba(216, 48, 48, 0.75))',
                     }}
                   >
                     Education
-                  </motion.span>
+                  </span>
                 </h2>
               </motion.div>
 
@@ -190,8 +182,8 @@ const SkillsEducation = () => {
                   <div className="flex flex-col h-full p-6 lg:p-8 bg-black/10 backdrop-blur-sm rounded-lg hover:bg-black/20 transition-all">
                     <div className="flex-1 space-y-3 mb-4">
                       <h3 
-                        style={{ color: '#9DA3AF' }}
-                        className="text-xl md:text-2xl font-light"
+                        style={{ color: '#FFFFFF' }}
+                        className="text-xl md:text-2xl font-medium"
                       >
                         {edu.institution}
                       </h3>
@@ -206,8 +198,8 @@ const SkillsEducation = () => {
                         </p>
                       )}
                       <p 
-                        style={{ color: '#9DA3AF' }}
-                        className="text-sm md:text-base leading-relaxed font-light"
+                        style={{ color: '#E2E8F0' }}
+                        className="text-sm md:text-base leading-relaxed font-normal"
                       >
                         {edu.description}
                       </p>
@@ -259,44 +251,25 @@ const SkillsEducation = () => {
                 }}
                 className="text-5xl md:text-6xl lg:text-7xl font-light mb-10 tracking-tight"
               >
-                <motion.span
+                <span
                   style={{
-                    background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(216, 48, 48, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
-                    backgroundSize: '200% 100%',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                  animate={{
-                    backgroundPosition: ['200% 0', '-200% 0'],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
+                    color: '#FFFFFF',
+                    textShadow: '0 0 30px rgba(255, 255, 255, 0.2)',
                   }}
                 >
                   Personal{' '}
-                </motion.span>
-                <motion.span 
+                </span>
+                <span 
                   style={{
-                    background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
-                    backgroundSize: '200% 100%',
+                    background: 'linear-gradient(90deg, #FF4D4D 0%, #D83030 50%, #FF1A1A 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
-                  }}
-                  animate={{
-                    backgroundPosition: ['200% 0', '-200% 0'],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
+                    filter: 'drop-shadow(0 0 16px rgba(216, 48, 48, 0.75))',
                   }}
                 >
                   Skills
-                </motion.span>
+                </span>
               </h2>
             </motion.div>
             
@@ -313,8 +286,8 @@ const SkillsEducation = () => {
                 >
                   <div className="text-5xl mb-4 text-center">{skill.icon}</div>
                   <h3 
-                    style={{ color: '#9DA3AF' }}
-                    className="text-xl md:text-2xl font-light text-center"
+                    style={{ color: '#FFFFFF' }}
+                    className="text-xl md:text-2xl font-medium text-center"
                   >
                     {skill.title}
                   </h3>
@@ -324,8 +297,8 @@ const SkillsEducation = () => {
                     </span>
                   </div>
                   <p 
-                    style={{ color: '#9DA3AF' }}
-                    className="text-base md:text-lg leading-relaxed font-light text-center"
+                    style={{ color: '#E2E8F0' }}
+                    className="text-base md:text-lg leading-relaxed font-normal text-center"
                   >
                     {skill.description}
                   </p>

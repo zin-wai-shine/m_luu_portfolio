@@ -352,27 +352,25 @@ const Portfolio = () => {
                 style={{ letterSpacing: '0.03em' }}
                 className="text-5xl md:text-7xl lg:text-8xl font-light mb-4 tracking-tight"
               >
-                <motion.span 
+                <span 
                   style={{
-                    background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
-                    backgroundSize: '200% 100%',
+                    background: 'linear-gradient(90deg, #FF4D4D 0%, #D83030 50%, #FF1A1A 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
+                    filter: 'drop-shadow(0 0 20px rgba(216, 48, 48, 0.75))',
                   }}
-                  animate={{ backgroundPosition: ['200% 0', '-200% 0'] }}
-                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                 >
                   Projects
-                </motion.span>
+                </span>
               </h1>
               <p 
                 style={{ 
-                  color: '#9DA3AF',
-                  textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
-                  letterSpacing: '0.15em',
+                  color: '#E2E8F0',
+                  textShadow: '0 0 10px rgba(255, 255, 255, 0.1)',
+                  letterSpacing: '0.08em',
                 }}
-                className="text-lg md:text-xl lg:text-2xl leading-relaxed font-light"
+                className="text-lg md:text-xl lg:text-2xl leading-relaxed font-normal"
               >
                 Explore my creative work
               </p>
@@ -437,7 +435,7 @@ const Portfolio = () => {
             animate={{ opacity: 1 }}
             className="text-center py-12"
           >
-            <p style={{ color: '#9DA3AF' }} className="text-lg font-light">No projects found in this category.</p>
+            <p style={{ color: '#E2E8F0' }} className="text-lg font-normal">No projects found in this category.</p>
           </motion.div>
         )}
       </div>

@@ -97,38 +97,41 @@ const Home = () => {
       <section className="relative min-h-screen w-full flex items-center justify-start overflow-hidden">
         {/* Background Image - Original Color with Soft Dark Overlay */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <motion.div 
-            className="hero-bg-motion absolute inset-0 w-full h-full bg-cover bg-no-repeat"
-            style={{
-              backgroundImage: `url(${heroBackgroundImage})`,
-              minHeight: '100vh',
-            }}
-            animate={{
-              scale: [1, 1.03, 1],
-              x: [0, -12, 0],
-              y: [0, -6, 0],
-            }}
-            transition={{
-              duration: 24,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          ></motion.div>
+          <div className="absolute inset-0 w-full h-full [transform:scaleX(-1)]">
+            <motion.div 
+              className="hero-bg-motion absolute inset-0 w-full h-full bg-cover bg-no-repeat bg-[78%_center] md:bg-center"
+              style={{
+                backgroundImage: `url(${heroBackgroundImage})`,
+                minHeight: '100vh',
+              }}
+              animate={{
+                scale: [1, 1.03, 1],
+                x: [0, -12, 0],
+                y: [0, -6, 0],
+              }}
+              transition={{
+                duration: 24,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            ></motion.div>
+          </div>
           
-          {/* Soft dark overlay for text readability - matching About Me section */}
-          <div className="absolute inset-0 bg-black/15 pointer-events-none z-0"></div>
+          {/* Enhanced dark overlay for text contrast and cinematic depth */}
+          <div className="absolute inset-0 bg-black/40 md:bg-black/30 pointer-events-none z-0"></div>
           
-          {/* Left-side dark gradient protection */}
+          {/* Increased left-side dark gradient shadow protection */}
           <div 
-            className="absolute inset-y-0 left-0 w-full md:w-3/4 lg:w-2/3 pointer-events-none z-0"
+            className="absolute inset-y-0 left-0 w-full md:w-4/5 lg:w-3/4 pointer-events-none z-0"
             style={{
-              background: 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.1) 75%, transparent 100%)'
+              background: 'linear-gradient(to right, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0.4) 70%, transparent 100%)'
             }}
           ></div>
           
-          {/* Top/bottom dark fades */}
-          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/60 via-black/30 to-transparent pointer-events-none z-0"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-48 md:h-36 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none z-0"></div>
+          {/* Top/bottom dark fades and cinematic edge vignette shadow */}
+          <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/80 via-black/40 to-transparent pointer-events-none z-0"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-52 md:h-44 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none z-0"></div>
+          <div className="absolute inset-0 shadow-[inset_0_0_120px_rgba(0,0,0,0.8)] pointer-events-none z-0"></div>
         </div>
 
       {/* Hero Content - Left Aligned */}
@@ -144,48 +147,29 @@ const Home = () => {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="text-6xl sm:text-7xl md:text-7xl lg:text-8xl font-sans mb-4 md:mb-8 tracking-tight text-left"
         >
-          <motion.span 
+          <span 
             className="font-light"
             style={{
-              background: 'linear-gradient(90deg, #FFFFFF 0%, #E5E7EB 40%, rgba(216, 48, 48, 0.9) 50%, #E5E7EB 60%, #FFFFFF 100%)',
-              backgroundSize: '200% 100%',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
+              color: '#FFFFFF',
+              textShadow: '0 0 35px rgba(255, 255, 255, 0.4), 0 4px 20px rgba(0, 0, 0, 0.95)',
               letterSpacing: '0.05em',
-            }}
-            animate={{
-              backgroundPosition: ['200% 0', '-200% 0'],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "linear",
             }}
           >
             M
-          </motion.span>
-          <motion.span 
+          </span>
+          <span 
             className="mx-2 md:mx-3 font-light tracking-wider"
             style={{
-              background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.6) 0%, rgba(216, 48, 48, 0.6) 40%, rgba(255, 55, 55, 1) 50%, rgba(216, 48, 48, 0.6) 60%, rgba(216, 48, 48, 0.6) 100%)',
-              backgroundSize: '200% 100%',
+              background: 'linear-gradient(90deg, #FF4D4D 0%, #D83030 50%, #FF1A1A 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
+              filter: 'drop-shadow(0 0 25px rgba(216, 48, 48, 0.95)) drop-shadow(0 4px 15px rgba(0, 0, 0, 0.9))',
               letterSpacing: '0.08em',
             }}
-            animate={{
-              backgroundPosition: ['200% 0', '-200% 0'],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "linear",
-            }}
           >
-            LUU
-          </motion.span>
+            Luu
+          </span>
         </motion.h1>
           
         {/* Modern decorative line with glow - aligned left */}
@@ -193,7 +177,7 @@ const Home = () => {
           initial={{ width: 0 }}
           animate={{ width: '100px' }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mb-7 md:mb-8 rounded-full shadow-[0_0_20px_rgba(216,48,48,0.6)] ml-0 mr-auto"
+          className="h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mb-7 md:mb-8 rounded-full shadow-[0_0_25px_rgba(216,48,48,0.9)] ml-0 mr-auto"
         ></motion.div>
       
         <motion.p
@@ -202,9 +186,10 @@ const Home = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           style={{ 
             letterSpacing: '0.15em',
-            color: '#F3F4F6'
+            color: '#FFFFFF',
+            textShadow: '0 4px 25px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.8)'
           }}
-          className="text-base sm:text-lg md:text-xl lg:text-2xl mt-2 md:mt-0 mb-4 md:mb-8 font-light tracking-wide uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] text-left flex flex-col md:flex-row md:flex-wrap space-y-4 md:space-y-0 leading-normal"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mt-2 md:mt-0 mb-4 md:mb-8 font-light tracking-wide uppercase drop-shadow-[0_4px_25px_rgba(0,0,0,0.95)] text-left flex flex-col md:flex-row md:flex-wrap space-y-4 md:space-y-0 leading-normal"
         >
           <span className="block md:inline py-1 md:py-0">Creative Director</span>
           <span className="hidden md:inline text-deep-yellow mx-2">/</span>
@@ -220,11 +205,12 @@ const Home = () => {
           transition={{ delay: 0.6, duration: 0.8 }}
           style={{ 
             letterSpacing: '0.05em',
-            color: '#E5E7EB'
+            color: '#F3F4F6',
+            textShadow: '0 4px 20px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.8)'
           }}
-          className="text-sm sm:text-base md:text-lg max-w-2xl mt-44 sm:mt-48 md:mt-10 mb-2 md:mb-10 leading-relaxed font-light drop-shadow-[0_3px_15px_rgba(0,0,0,0.9)] ml-0 mr-auto text-left"
+          className="text-sm sm:text-base md:text-lg max-w-2xl mt-44 sm:mt-48 md:mt-10 mb-2 md:mb-10 leading-relaxed font-light drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)] ml-0 mr-auto text-left"
         >
-          I'm an artist, and branding expert with over <span className="text-deep-yellow font-medium text-base sm:text-lg md:text-xl drop-shadow-[0_0_15px_rgba(216,48,48,0.8)]">10 years</span> of professional experience in the film and video production industry. <span className="text-deep-yellow font-medium text-base sm:text-lg md:text-xl drop-shadow-[0_0_15px_rgba(216,48,48,0.8)]">Based in Thailand</span>.
+          I'm an artist, and branding expert with over <span className="text-deep-yellow font-medium text-base sm:text-lg md:text-xl drop-shadow-[0_0_20px_rgba(216,48,48,0.9)]">10 years</span> of professional experience in the film and video production industry. <span className="text-deep-yellow font-medium text-base sm:text-lg md:text-xl drop-shadow-[0_0_20px_rgba(216,48,48,0.9)]">Based in Thailand</span>.
         </motion.p>
       </motion.div>
 
@@ -239,7 +225,7 @@ const Home = () => {
         <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
-            style={{ color: '#9DA3AF' }}
+            style={{ color: '#FFFFFF' }}
             className="hover:text-deep-yellow transition-colors drop-shadow-lg"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -294,46 +280,27 @@ const Home = () => {
                 letterSpacing: '0.03em',
               }}
             >
-              <motion.span
+              <span
                 className="relative z-10"
                 style={{
-                  background: 'linear-gradient(90deg, #FFFFFF 0%, #E5E7EB 40%, rgba(216, 48, 48, 0.9) 50%, #E5E7EB 60%, #FFFFFF 100%)',
-                  backgroundSize: '200% 100%',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-                animate={{
-                  backgroundPosition: ['200% 0', '-200% 0'],
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "linear",
+                  color: '#FFFFFF',
+                  textShadow: '0 0 30px rgba(255, 255, 255, 0.2)',
                 }}
               >
                 About{' '}
-              </motion.span>
-              <motion.span 
+              </span>
+              <span 
                 className="relative z-10"
                 style={{
-                  background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.6) 0%, rgba(216, 48, 48, 0.6) 40%, rgba(255, 55, 55, 1) 50%, rgba(216, 48, 48, 0.6) 60%, rgba(216, 48, 48, 0.6) 100%)',
-                  backgroundSize: '200% 100%',
+                  background: 'linear-gradient(90deg, #FF4D4D 0%, #D83030 50%, #FF1A1A 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                }}
-                animate={{
-                  backgroundPosition: ['200% 0', '-200% 0'],
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "linear",
+                  filter: 'drop-shadow(0 0 16px rgba(216, 48, 48, 0.75))',
                 }}
               >
                 Me
-              </motion.span>
+              </span>
             </h2>
             
             <div className="space-y-7 mb-12 max-w-2xl relative z-10">
@@ -400,46 +367,27 @@ const Home = () => {
                 letterSpacing: '0.03em',
               }}
             >
-              <motion.span
+              <span
                 className="relative z-10"
                 style={{
-                  background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(216, 48, 48, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
-                  backgroundSize: '200% 100%',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-                animate={{
-                  backgroundPosition: ['200% 0', '-200% 0'],
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "linear",
+                  color: '#FFFFFF',
+                  textShadow: '0 0 30px rgba(255, 255, 255, 0.2)',
                 }}
               >
                 Featured{' '}
-              </motion.span>
-              <motion.span 
+              </span>
+              <span 
                 className="relative z-10"
                 style={{
-                  background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
-                  backgroundSize: '200% 100%',
+                  background: 'linear-gradient(90deg, #FF4D4D 0%, #D83030 50%, #FF1A1A 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                }}
-                animate={{
-                  backgroundPosition: ['200% 0', '-200% 0'],
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "linear",
+                  filter: 'drop-shadow(0 0 16px rgba(216, 48, 48, 0.75))',
                 }}
               >
                 Projects
-              </motion.span>
+              </span>
             </h2>
             
             <motion.p 
@@ -581,7 +529,7 @@ const Home = () => {
                     
                     {/* Text Content Group with Padding */}
                     <div className="p-6 bg-black/20 backdrop-blur-sm">
-                      <h3 style={{ color: '#9DA3AF' }} className="text-2xl font-sans font-light mb-3 group-hover:text-deep-yellow transition-colors">
+                      <h3 style={{ color: '#FFFFFF' }} className="text-2xl font-sans font-medium mb-3 group-hover:text-red-500 transition-colors">
                         {project.title}
                       </h3>
                       <div className="flex items-center gap-2 mb-4">
@@ -628,13 +576,14 @@ const Home = () => {
             <h2 
               className="text-3xl md:text-5xl font-light mb-6 tracking-tight"
               style={{
-                color: '#9DA3AF',
+                color: '#FFFFFF',
                 letterSpacing: '0.03em',
-                textShadow: '0 0 30px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.15)',
+                textShadow: '0 0 20px rgba(255, 255, 255, 0.4)',
               }}
             >
-              Bringing <span className="text-deep-yellow" style={{
-                textShadow: '0 0 40px rgba(216, 48, 48, 0.8), 0 0 80px rgba(216, 48, 48, 0.4)',
+              Bringing <span style={{
+                color: '#FF3333',
+                textShadow: '0 0 30px rgba(255, 51, 51, 0.9), 0 0 60px rgba(216, 48, 48, 0.5)',
               }}>Creative Visions</span> to Life
             </h2>
             <p 

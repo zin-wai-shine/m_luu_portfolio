@@ -58,52 +58,33 @@ const About = () => {
               }}
               className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight relative"
             >
-              <motion.span
+              <span
                 style={{
-                  background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(216, 48, 48, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
-                  backgroundSize: '200% 100%',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-                animate={{
-                  backgroundPosition: ['200% 0', '-200% 0'],
-                }}
-                transition={{
-                  duration: 15,
-                  repeat: Infinity,
-                  ease: "linear",
+                  color: '#FFFFFF',
+                  textShadow: '0 0 30px rgba(255, 255, 255, 0.2)',
                 }}
               >
                 Creative Director &<br />
-              </motion.span>
-              <motion.span 
+              </span>
+              <span 
                 style={{
-                  background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
-                  backgroundSize: '200% 100%',
+                  background: 'linear-gradient(90deg, #FF4D4D 0%, #D83030 50%, #FF1A1A 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                }}
-                animate={{
-                  backgroundPosition: ['200% 0', '-200% 0'],
-                }}
-                transition={{
-                  duration: 15,
-                  repeat: Infinity,
-                  ease: "linear",
+                  filter: 'drop-shadow(0 0 20px rgba(216, 48, 48, 0.75))',
                 }}
               >
                 Filmmaker
-              </motion.span>
+              </span>
             </h1>
             <p 
               style={{ 
-                color: '#9DA3AF',
-                textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
-                letterSpacing: '0.15em',
+                color: '#E2E8F0',
+                textShadow: '0 0 10px rgba(255, 255, 255, 0.1)',
+                letterSpacing: '0.08em',
               }}
-              className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed font-light"
+              className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed font-normal"
             >
               10 years of experience in filmmaking with a passion for visual storytelling
             </p>
@@ -124,14 +105,15 @@ const About = () => {
                 className="text-center"
               >
                 <div 
-                  className="text-4xl md:text-5xl font-light text-deep-yellow mb-2"
+                  className="text-4xl md:text-5xl font-bold mb-2"
                   style={{
-                    textShadow: '0 0 40px rgba(216, 48, 48, 0.6), 0 0 80px rgba(216, 48, 48, 0.3)',
+                    color: '#FF3333',
+                    textShadow: '0 0 25px rgba(255, 51, 51, 0.8), 0 0 50px rgba(216, 48, 48, 0.4)',
                   }}
                 >
                   {stat.value}
                 </div>
-                <div className="text-sm md:text-base text-gray-300 uppercase tracking-wider font-light">
+                <div className="text-sm md:text-base text-gray-200 uppercase tracking-wider font-medium">
                   {stat.label}
                 </div>
               </motion.div>
@@ -174,44 +156,25 @@ const About = () => {
                   }}
                   className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight"
                 >
-                  <motion.span
+                  <span
                     style={{
-                      background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(216, 48, 48, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
-                      backgroundSize: '200% 100%',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                    }}
-                    animate={{
-                      backgroundPosition: ['200% 0', '-200% 0'],
-                    }}
-                    transition={{
-                      duration: 15,
-                      repeat: Infinity,
-                      ease: "linear",
+                      color: '#FFFFFF',
+                      textShadow: '0 0 30px rgba(255, 255, 255, 0.2)',
                     }}
                   >
                     My{' '}
-                  </motion.span>
-                  <motion.span 
+                  </span>
+                  <span 
                     style={{
-                      background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
-                      backgroundSize: '200% 100%',
+                      background: 'linear-gradient(90deg, #FF4D4D 0%, #D83030 50%, #FF1A1A 100%)',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
                       backgroundClip: 'text',
-                    }}
-                    animate={{
-                      backgroundPosition: ['200% 0', '-200% 0'],
-                    }}
-                    transition={{
-                      duration: 15,
-                      repeat: Infinity,
-                      ease: "linear",
+                      filter: 'drop-shadow(0 0 16px rgba(216, 48, 48, 0.75))',
                     }}
                   >
                     Story
-                  </motion.span>
+                  </span>
                 </h2>
               </motion.div>
               
@@ -224,16 +187,16 @@ const About = () => {
               >
                 <p 
                   style={{ 
-                    color: '#9DA3AF',
-                    textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
+                    color: '#E2E8F0',
+                    textShadow: '0 0 10px rgba(255, 255, 255, 0.05)',
                   }}
-                  className="text-lg md:text-xl leading-relaxed font-light"
+                  className="text-lg md:text-xl leading-relaxed font-normal"
                 >
                   With 10 years of experience, my background is in advertising production, TVC production, social media production, and food vlog production. Seeking new challenges, collaborations, and opportunities. I am passionate about contributing with my skills and bringing ideas to life.
                 </p>
                 <p 
-                  style={{ color: '#9DA3AF' }}
-                  className="text-lg md:text-xl leading-relaxed font-light"
+                  style={{ color: '#E2E8F0' }}
+                  className="text-lg md:text-xl leading-relaxed font-normal"
                 >
                   Specializing in commercial TVC production, short films, music videos, and documentaries. With expertise spanning from pre-production to post-production, I bring creative visions to life through cinematic storytelling.
                 </p>
@@ -263,7 +226,7 @@ const About = () => {
                     >
                       {item.icon}
                     </span>
-                    <span style={{ color: '#9DA3AF' }} className="text-xs sm:text-sm font-light uppercase tracking-wider">
+                    <span style={{ color: '#E2E8F0' }} className="text-xs sm:text-sm font-medium uppercase tracking-wider">
                       {item.title}
                     </span>
                   </motion.div>
@@ -398,77 +361,58 @@ const About = () => {
                 }}
                 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight"
               >
-                <motion.span
+                <span
                   style={{
-                    background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(216, 48, 48, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
-                    backgroundSize: '200% 100%',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                  animate={{
-                    backgroundPosition: ['200% 0', '-200% 0'],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
+                    color: '#FFFFFF',
+                    textShadow: '0 0 30px rgba(255, 255, 255, 0.2)',
                   }}
                 >
                   Personal{' '}
-                </motion.span>
-                <motion.span 
+                </span>
+                <span 
                   style={{
-                    background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
-                    backgroundSize: '200% 100%',
+                    background: 'linear-gradient(90deg, #FF4D4D 0%, #D83030 50%, #FF1A1A 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
-                  }}
-                  animate={{
-                    backgroundPosition: ['200% 0', '-200% 0'],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
+                    filter: 'drop-shadow(0 0 16px rgba(216, 48, 48, 0.75))',
                   }}
                 >
                   Details
-                </motion.span>
+                </span>
               </h3>
-            </motion.div>
-            <div className="flex flex-wrap gap-4 w-full">
-              {[
-                { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', label: 'Date of Birth', value: '5.5.1995' },
-                { icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z', label: 'Nationality', value: 'Burma' },
-                { icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129', label: 'Languages', value: 'English, Thai (Basic)' },
-                { icon: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', label: 'Position', value: 'Director, Cinematographer & Steadicam Operator' },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 + index * 0.1 }}
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  className="flex-1 min-w-[200px] p-5 bg-black/20 backdrop-blur-sm rounded-lg text-center"
-                >
-                  <motion.div 
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-12 h-12 rounded-full bg-deep-yellow/20 flex items-center justify-center mx-auto mb-3"
+              </motion.div>
+              <div className="flex flex-wrap gap-4 w-full">
+                {[
+                  { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', label: 'Date of Birth', value: '5.5.1995' },
+                  { icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z', label: 'Nationality', value: 'Burma' },
+                  { icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129', label: 'Languages', value: 'English, Thai (Basic)' },
+                  { icon: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', label: 'Position', value: 'Director, Cinematographer & Steadicam Operator' },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 + index * 0.1 }}
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    className="flex-1 min-w-[200px] p-5 bg-black/40 border border-gray-800/80 backdrop-blur-sm rounded-lg text-center"
                   >
-                    <svg className="w-6 h-6 text-deep-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
-                    </svg>
+                    <motion.div 
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center mx-auto mb-3"
+                    >
+                      <svg className="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon} />
+                      </svg>
+                    </motion.div>
+                    <div className="text-xs text-red-400 mb-2 uppercase tracking-wider font-semibold">
+                      {item.label}
+                    </div>
+                    <div style={{ color: '#FFFFFF' }} className="text-sm font-medium leading-relaxed whitespace-pre-line">
+                      {item.value}
+                    </div>
                   </motion.div>
-                  <div className="text-xs text-gray-400 mb-2 uppercase tracking-wider font-light">
-                    {item.label}
-                  </div>
-                  <div style={{ color: '#9DA3AF' }} className="text-sm font-light leading-relaxed whitespace-pre-line">
-                    {item.value}
-                  </div>
-                </motion.div>
               ))}
             </div>
           </motion.div>

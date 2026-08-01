@@ -92,33 +92,25 @@ const Activity = () => {
               }}
               className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight"
             >
-              <motion.span 
+              <span 
                 style={{
-                  background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
-                  backgroundSize: '200% 100%',
+                  background: 'linear-gradient(90deg, #FF4D4D 0%, #D83030 50%, #FF1A1A 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                }}
-                animate={{
-                  backgroundPosition: ['200% 0', '-200% 0'],
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "linear",
+                  filter: 'drop-shadow(0 0 20px rgba(216, 48, 48, 0.75))',
                 }}
               >
                 Activity
-              </motion.span>
+              </span>
             </h1>
             <p 
               style={{ 
-                color: '#9DA3AF',
-                textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
-                letterSpacing: '0.15em',
+                color: '#E2E8F0',
+                textShadow: '0 0 10px rgba(255, 255, 255, 0.1)',
+                letterSpacing: '0.08em',
               }}
-              className="text-lg md:text-xl lg:text-2xl max-w-3xl leading-relaxed font-light"
+              className="text-lg md:text-xl lg:text-2xl max-w-3xl leading-relaxed font-normal"
             >
               Behind the scenes and personal moments
             </p>
@@ -167,14 +159,14 @@ const Activity = () => {
                   <div className="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                     <div>
                       <h3 
-                        style={{ color: '#9DA3AF' }}
-                        className="text-xl font-light mb-2"
+                        style={{ color: '#FFFFFF' }}
+                        className="text-xl font-medium mb-2"
                       >
                         {activity.title}
                       </h3>
                       <p 
-                        style={{ color: '#9DA3AF' }}
-                        className="text-sm font-light"
+                        style={{ color: '#E2E8F0' }}
+                        className="text-sm font-normal"
                       >
                         {activity.description}
                       </p>

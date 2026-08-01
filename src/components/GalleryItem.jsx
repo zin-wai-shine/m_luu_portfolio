@@ -158,7 +158,7 @@ const GalleryItem = ({ project, index, onVideoClick }) => {
         
         {/* Text Content Group with Padding */}
         <div className="p-6 bg-black/20 backdrop-blur-sm">
-          <h3 style={{ color: '#9DA3AF' }} className="text-2xl font-sans font-light mb-3 group-hover:text-deep-yellow transition-colors">
+          <h3 style={{ color: '#FFFFFF' }} className="text-2xl font-sans font-medium mb-3 group-hover:text-red-500 transition-colors">
             {project.title}
           </h3>
           <div className="flex items-center gap-2 mb-4">

@@ -168,52 +168,33 @@ const Experience = () => {
               }}
               className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight"
             >
-              <motion.span
+              <span
                 style={{
-                  background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(216, 48, 48, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
-                  backgroundSize: '200% 100%',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-                animate={{
-                  backgroundPosition: ['200% 0', '-200% 0'],
-                }}
-                transition={{
-                  duration: 15,
-                  repeat: Infinity,
-                  ease: "linear",
+                  color: '#FFFFFF',
+                  textShadow: '0 0 30px rgba(255, 255, 255, 0.2)',
                 }}
               >
                 Professional <br />
-              </motion.span>
-              <motion.span 
+              </span>
+              <span 
                 style={{
-                  background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
-                  backgroundSize: '200% 100%',
+                  background: 'linear-gradient(90deg, #FF4D4D 0%, #D83030 50%, #FF1A1A 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
-                }}
-                animate={{
-                  backgroundPosition: ['200% 0', '-200% 0'],
-                }}
-                transition={{
-                  duration: 15,
-                  repeat: Infinity,
-                  ease: "linear",
+                  filter: 'drop-shadow(0 0 20px rgba(216, 48, 48, 0.75))',
                 }}
               >
                 Experience
-              </motion.span>
+              </span>
             </h1>
             <p 
               style={{ 
-                color: '#9DA3AF',
-                textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
-                letterSpacing: '0.15em',
+                color: '#E2E8F0',
+                textShadow: '0 0 10px rgba(255, 255, 255, 0.1)',
+                letterSpacing: '0.08em',
               }}
-              className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed font-light"
+              className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed font-normal"
             >
               10 years of experience across various production roles in the filmmaking industry
             </p>
@@ -249,75 +230,56 @@ const Experience = () => {
                   boxShadow: '0 0 10px rgba(216, 48, 48, 0.5)',
                 }}
               ></motion.div>
-              <h2 
-                style={{ 
-                  letterSpacing: '0.03em',
-                }}
-                className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight"
-              >
-                <motion.span
-                  style={{
-                    background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(216, 48, 48, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
-                    backgroundSize: '200% 100%',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
+                <h2 
+                  style={{ 
+                    letterSpacing: '0.03em',
                   }}
-                  animate={{
-                    backgroundPosition: ['200% 0', '-200% 0'],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
+                  className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight"
                 >
-                  My{' '}
-                </motion.span>
-                <motion.span 
-                  style={{
-                    background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
-                    backgroundSize: '200% 100%',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                  animate={{
-                    backgroundPosition: ['200% 0', '-200% 0'],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                >
-                  Expertise
-                </motion.span>
-              </h2>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+                  <span
+                    style={{
+                      color: '#FFFFFF',
+                      textShadow: '0 0 30px rgba(255, 255, 255, 0.2)',
+                    }}
+                  >
+                    My{' '}
+                  </span>
+                  <span 
+                    style={{
+                      background: 'linear-gradient(90deg, #FF4D4D 0%, #D83030 50%, #FF1A1A 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                      filter: 'drop-shadow(0 0 16px rgba(216, 48, 48, 0.75))',
+                    }}
+                  >
+                    Expertise
+                  </span>
+                </h2>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
                 className="space-y-6"
-            >
-              <p 
-                style={{ 
-                  color: '#9DA3AF',
-                  textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
-                }}
-                className="text-lg md:text-xl leading-relaxed font-light"
               >
-                Works as a Production Management, Editor, Videographer & Camera Steadicam Operator for overseas projects. Currently a Freelance Commercial TVC, Short film, Music Video Director, and Documentary maker.
-              </p>
-              <p 
-                style={{ color: '#9DA3AF' }}
-                className="text-lg md:text-xl leading-relaxed font-light"
-              >
-                With extensive experience across various production roles, I bring a comprehensive understanding of the entire filmmaking process, from initial concept to final delivery.
-              </p>
+                <p 
+                  style={{ 
+                    color: '#E2E8F0',
+                    textShadow: '0 0 10px rgba(255, 255, 255, 0.05)',
+                  }}
+                  className="text-lg md:text-xl leading-relaxed font-normal"
+                >
+                  Works as a Production Management, Editor, Videographer & Camera Steadicam Operator for overseas projects. Currently a Freelance Commercial TVC, Short film, Music Video Director, and Documentary maker.
+                </p>
+                <p 
+                  style={{ color: '#E2E8F0' }}
+                  className="text-lg md:text-xl leading-relaxed font-normal"
+                >
+                  With extensive experience across various production roles, I bring a comprehensive understanding of the entire filmmaking process, from initial concept to final delivery.
+                </p>
             </motion.div>
             </motion.div>
 
@@ -403,15 +365,15 @@ const Experience = () => {
                       <div className="flex items-center gap-3 mb-4">
                         <div className="w-1 h-8 bg-deep-yellow"></div>
                         <h3 
-                          style={{ color: '#9DA3AF' }}
-                          className="text-xl md:text-2xl font-light"
+                          style={{ color: '#FFFFFF' }}
+                          className="text-xl md:text-2xl font-medium"
                         >
                           {role.title}
                         </h3>
                       </div>
                       <p 
-                        style={{ color: '#9DA3AF' }}
-                        className="text-base md:text-lg leading-relaxed font-light"
+                        style={{ color: '#E2E8F0' }}
+                        className="text-base md:text-lg leading-relaxed font-normal"
                       >
                         {role.description}
                       </p>
@@ -452,48 +414,29 @@ const Experience = () => {
                 }}
                 className="text-5xl md:text-6xl lg:text-7xl font-light mb-10 tracking-tight"
               >
-                <motion.span
+                <span
                   style={{
-                    background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(216, 48, 48, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
-                    backgroundSize: '200% 100%',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                  animate={{
-                    backgroundPosition: ['200% 0', '-200% 0'],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
+                    color: '#FFFFFF',
+                    textShadow: '0 0 30px rgba(255, 255, 255, 0.2)',
                   }}
                 >
                   Awards &{' '}
-                </motion.span>
-                <motion.span 
+                </span>
+                <span 
                   style={{
-                    background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
-                    backgroundSize: '200% 100%',
+                    background: 'linear-gradient(90deg, #FF4D4D 0%, #D83030 50%, #FF1A1A 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
-                  }}
-                  animate={{
-                    backgroundPosition: ['200% 0', '-200% 0'],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
+                    filter: 'drop-shadow(0 0 16px rgba(216, 48, 48, 0.75))',
                   }}
                 >
                   Recognition
-                </motion.span>
+                </span>
               </h2>
               <p 
-                style={{ color: '#9DA3AF' }}
-                className="text-lg md:text-xl leading-relaxed font-light"
+                style={{ color: '#E2E8F0' }}
+                className="text-lg md:text-xl leading-relaxed font-normal"
               >
                 Received awards at the International Film Festival.
               </p>
@@ -525,14 +468,14 @@ const Experience = () => {
                         </div>
                       <div className="space-y-3">
                         <h3 
-                          style={{ color: '#9DA3AF' }}
-                          className="text-xl md:text-2xl font-light"
+                          style={{ color: '#FFFFFF' }}
+                          className="text-xl md:text-2xl font-medium"
                         >
                           {award.title}
                         </h3>
                         <p 
-                          style={{ color: '#9DA3AF' }}
-                          className="text-base md:text-lg leading-relaxed font-light"
+                          style={{ color: '#E2E8F0' }}
+                          className="text-base md:text-lg leading-relaxed font-normal"
                         >
                           {award.description}
                         </p>
@@ -575,49 +518,30 @@ const Experience = () => {
                 }}
                 className="text-5xl md:text-6xl lg:text-7xl font-light mb-10 tracking-tight"
               >
-                <motion.span
+                <span
                   style={{
-                    background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(216, 48, 48, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
-                    backgroundSize: '200% 100%',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                  animate={{
-                    backgroundPosition: ['200% 0', '-200% 0'],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
+                    color: '#FFFFFF',
+                    textShadow: '0 0 30px rgba(255, 255, 255, 0.2)',
                   }}
                 >
                   Brands I've{' '}
-                </motion.span>
-                <motion.span 
+                </span>
+                <span 
                   style={{
-                    background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
-                    backgroundSize: '200% 100%',
+                    background: 'linear-gradient(90deg, #FF4D4D 0%, #D83030 50%, #FF1A1A 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
-                  }}
-                  animate={{
-                    backgroundPosition: ['200% 0', '-200% 0'],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
+                    filter: 'drop-shadow(0 0 16px rgba(216, 48, 48, 0.75))',
                   }}
                 >
                   Collaborated With
-                </motion.span>
+                </span>
               </h2>
               <div className="flex items-center justify-between">
                 <p 
-                  style={{ color: '#9DA3AF' }}
-                  className="text-lg md:text-xl leading-relaxed font-light"
+                  style={{ color: '#E2E8F0' }}
+                  className="text-lg md:text-xl leading-relaxed font-normal"
                 >
                   Trusted by leading brands and organizations.
                 </p>
