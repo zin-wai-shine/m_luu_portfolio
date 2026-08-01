@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import GalleryItem from '../components/GalleryItem'
 import VideoModal from '../components/VideoModal'
-import blackVdCameraImage from '../assets/images/black_vd_camera.png'
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All')
@@ -328,218 +327,89 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen pt-24 pb-20 bg-black overflow-x-hidden">
-      {/* Hero Section - Two Column Layout */}
-      <section className="relative py-20 px-4 overflow-hidden bg-black">
+      {/* Header Section - Title on Left, Filter Selection Buttons on Right */}
+      <section className="relative pt-12 pb-12 px-4 bg-black">
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-10 border-b border-white/10">
             {/* Left Column: Text Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            {/* Decorative accent line with glow */}
-            <motion.div 
-                className="w-20 h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mb-10"
-              initial={{ width: 0 }}
-              animate={{ width: '80px' }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              style={{
-                boxShadow: '0 0 10px rgba(216, 48, 48, 0.5)',
-              }}
-            ></motion.div>
-            
-            <h1 
-              style={{ 
-                letterSpacing: '0.03em',
-              }}
-              className="text-5xl md:text-7xl lg:text-8xl font-light mb-6 tracking-tight"
-            >
-              <motion.span 
-                style={{
-                  background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
-                  backgroundSize: '200% 100%',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-                animate={{
-                  backgroundPosition: ['200% 0', '-200% 0'],
-                }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-              >
-                Projects
-              </motion.span>
-            </h1>
-            <p 
-              style={{ 
-                color: '#9DA3AF',
-                textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
-                letterSpacing: '0.15em',
-              }}
-                className="text-lg md:text-xl lg:text-2xl leading-relaxed font-light"
-            >
-              Explore my creative work
-            </p>
-          </motion.div>
-
-            {/* Right Column: Camera Image */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="hidden lg:block flex justify-center items-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              <div className="relative w-3/4 overflow-hidden">
-                <img
-                  src={blackVdCameraImage}
-                  alt="Camera Equipment"
-                  className="w-full h-auto object-contain"
+              {/* Decorative accent line */}
+              <motion.div 
+                className="w-20 h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mb-6"
+                initial={{ width: 0 }}
+                animate={{ width: '80px' }}
+                transition={{ delay: 0.2, duration: 0.8 }}
+                style={{
+                  boxShadow: '0 0 10px rgba(216, 48, 48, 0.5)',
+                }}
+              ></motion.div>
+              
+              <h1 
+                style={{ letterSpacing: '0.03em' }}
+                className="text-5xl md:text-7xl lg:text-8xl font-light mb-4 tracking-tight"
+              >
+                <motion.span 
                   style={{
-                    filter: 'grayscale(100%) contrast(1.1) brightness(0.9)',
+                    background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
+                    backgroundSize: '200% 100%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
                   }}
-                />
-                {/* Subtle overlay effect */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/5"></div>
-                {/* Glass shimmer wave effect */}
-                <motion.div
-                  className="absolute inset-0"
-                  style={{
-                    background: 'linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%)',
-                    backgroundSize: '200% 200%',
-                    mixBlendMode: 'overlay',
-                  }}
-                  animate={{
-                    backgroundPosition: ['200% 0', '-200% 0'],
-                  }}
-                  transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                />
-                {/* Additional 3D depth effect with wave */}
-                <motion.div
-                  className="absolute inset-0"
-                  style={{
-                    background: 'linear-gradient(120deg, transparent 25%, rgba(255, 255, 255, 0.15) 45%, transparent 65%)',
-                    backgroundSize: '250% 250%',
-                    mixBlendMode: 'soft-light',
-                  }}
-                  animate={{
-                    backgroundPosition: ['-250% 0', '250% 0'],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                />
+                  animate={{ backgroundPosition: ['200% 0', '-200% 0'] }}
+                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                >
+                  Projects
+                </motion.span>
+              </h1>
+              <p 
+                style={{ 
+                  color: '#9DA3AF',
+                  textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
+                  letterSpacing: '0.15em',
+                }}
+                className="text-lg md:text-xl lg:text-2xl leading-relaxed font-light"
+              >
+                Explore my creative work
+              </p>
+            </motion.div>
+
+            {/* Right Column: Filter Selection Buttons (Placed where camera image was) */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex items-center"
+            >
+              <div className="flex flex-wrap items-center gap-3">
+                {filters.map((filter) => (
+                  <motion.button
+                    key={filter}
+                    onClick={() => setActiveFilter(filter)}
+                    whileTap={{ scale: 0.95 }}
+                    className={`relative px-6 py-3 font-light text-xs md:text-sm uppercase tracking-wider transition-all duration-300 overflow-hidden rounded-full whitespace-nowrap border ${
+                      activeFilter === filter
+                        ? 'text-white border-[#D83030] shadow-[0_0_15px_rgba(216,48,48,0.4)]'
+                        : 'text-gray-400 border-white/10 hover:border-white/30 hover:text-white'
+                    }`}
+                    style={{
+                      background: activeFilter === filter ? 'rgba(216, 48, 48, 0.85)' : 'rgba(255, 255, 255, 0.03)',
+                    }}
+                  >
+                    {filter}
+                  </motion.button>
+                ))}
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto max-w-7xl px-4">
-        {/* Filter Tabs - Mobile: Horizontal Scrollable, Desktop: Centered */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-16"
-        >
-          {/* Mobile: Horizontal Scrollable Design */}
-          <div className="md:hidden overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide">
-            <div className="inline-flex gap-3 min-w-max">
-              {filters.map((filter, index) => (
-                <motion.button
-                  key={filter}
-                  onClick={() => setActiveFilter(filter)}
-                  whileTap={{ scale: 0.95 }}
-                  className={`relative px-5 py-2.5 font-light text-xs uppercase tracking-wider transition-all duration-300 overflow-hidden rounded-full whitespace-nowrap ${
-                    activeFilter === filter
-                      ? 'text-white font-medium'
-                      : 'text-[#9DA3AF]'
-                  }`}
-                >
-                  {/* Active state background */}
-                  {activeFilter === filter && (
-                    <motion.div
-                      layoutId="activeFilterMobile"
-                      className="absolute inset-0 bg-deep-yellow rounded-full"
-                      initial={false}
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
-                  
-                  {/* Inactive state background */}
-                  {activeFilter !== filter && (
-                    <div className="absolute inset-0 bg-black/30 backdrop-blur-sm border border-white/10 rounded-full"></div>
-                  )}
-                  
-                  {/* Text */}
-                  <span className="relative z-10">
-                    {filter}
-                  </span>
-                </motion.button>
-              ))}
-            </div>
-          </div>
-
-          {/* Desktop: Centered Design */}
-          <div className="hidden md:flex justify-center">
-            <div className="inline-flex bg-black/20 backdrop-blur-sm rounded-lg p-1">
-              {filters.map((filter, index) => (
-                <motion.button
-                  key={filter}
-                  onClick={() => setActiveFilter(filter)}
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  className={`relative px-6 py-3 font-light text-sm uppercase tracking-wider transition-all duration-300 overflow-hidden ${
-                    activeFilter === filter
-                      ? 'text-white font-medium'
-                      : 'text-[#9DA3AF] hover:text-deep-yellow'
-                  }`}
-                >
-                  {/* Active state background */}
-                  {activeFilter === filter && (
-                    <motion.div
-                      layoutId="activeFilter"
-                      className="absolute inset-0 bg-deep-yellow rounded-md"
-                      initial={false}
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                    />
-                  )}
-                  
-                  {/* Text */}
-                  <span className="relative z-10 whitespace-nowrap">
-                    {filter}
-                  </span>
-                  
-                  {/* Shine effect on active */}
-                  {activeFilter === filter && (
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-md"
-                      animate={{
-                        x: ['-100%', '200%'],
-                      }}
-                      transition={{
-                        repeat: Infinity,
-                        duration: 3,
-                        ease: 'linear',
-                      }}
-                    />
-                  )}
-                </motion.button>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
+      <div className="container mx-auto max-w-7xl px-4 pt-4">
         {/* Portfolio Grid */}
         <AnimatePresence mode="wait">
           <motion.div
