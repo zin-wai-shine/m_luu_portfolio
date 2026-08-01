@@ -226,7 +226,7 @@ const Home = () => {
           }}
           className="text-sm sm:text-base md:text-lg max-w-2xl mt-44 sm:mt-48 md:mt-10 mb-2 md:mb-10 leading-relaxed font-light drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)] ml-0 mr-auto text-left"
         >
-          I'm an artist, and branding expert with over <span className="text-deep-yellow font-medium text-base sm:text-lg md:text-xl drop-shadow-[0_0_20px_rgba(216,48,48,0.9)]">10 years</span> of professional experience in the film and video production industry. <span className="text-deep-yellow font-medium text-base sm:text-lg md:text-xl drop-shadow-[0_0_20px_rgba(216,48,48,0.9)]">Based in Thailand</span>.
+          I'm an artist, and branding expert with over <span className="text-deep-yellow font-medium text-base sm:text-lg md:text-xl drop-shadow-[0_0_20px_rgba(216,48,48,0.9)]">10 years</span> of professional experience in the film and video production industry. <span className="text-deep-yellow font-medium text-base sm:text-lg md:text-xl drop-shadow-[0_0_20px_rgba(216,48,48,0.9)]">Based in Thailand 🇹🇭 Myanmar 🇲🇲</span>.
         </motion.p>
       </motion.div>
 
