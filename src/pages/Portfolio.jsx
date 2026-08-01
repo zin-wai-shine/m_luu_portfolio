@@ -391,7 +391,7 @@ const Portfolio = () => {
                     key={filter}
                     onClick={() => setActiveFilter(filter)}
                     whileTap={{ scale: 0.95 }}
-                    className={`relative px-6 py-3 font-light text-xs md:text-sm uppercase tracking-wider transition-all duration-300 overflow-hidden rounded-full whitespace-nowrap border ${
+                    className={`relative px-6 py-3 font-light text-xs md:text-sm tracking-wider transition-all duration-300 overflow-hidden rounded-full whitespace-nowrap border ${
                       activeFilter === filter
                         ? 'text-white border-[#D83030] shadow-[0_0_15px_rgba(216,48,48,0.4)]'
                         : 'text-gray-400 border-white/10 hover:border-white/30 hover:text-white'
