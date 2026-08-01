@@ -55,6 +55,22 @@ const Portfolio = () => {
     },
     {
       id: 5,
+      title: 'QUEENS - FALL IN LOVE',
+      client: 'QUEENS',
+      category: 'Music Video',
+      description: 'Official Music Video Production',
+      videoUrl: 'https://www.youtube.com/watch?v=ApV3y-YzZxM',
+    },
+    {
+      id: 6,
+      title: 'Makro x MILLI - LIVE LIKE A PRO',
+      client: 'Makro × MILLI',
+      category: 'Music Video',
+      description: 'Official Music Video Production',
+      videoUrl: 'https://www.youtube.com/watch?v=MPePWnWx4IE',
+    },
+    {
+      id: 7,
       title: 'PRIM E - Music Video',
       client: 'PRIM E',
       category: 'Music Video',
@@ -301,22 +317,7 @@ const Portfolio = () => {
       description: 'Music Video Production',
       videoUrl: 'https://www.youtube.com/watch?v=U-VI4mmMVYE',
     },
-    {
-      id: 36,
-      title: 'Makro x MILLI - LIVE LIKE A PRO',
-      client: 'Makro × MILLI',
-      category: 'Music Video',
-      description: 'Official Music Video Production',
-      videoUrl: 'https://www.youtube.com/watch?v=MPePWnWx4IE',
-    },
-    {
-      id: 37,
-      title: 'QUEENS - FALL IN LOVE',
-      client: 'QUEENS',
-      category: 'Music Video',
-      description: 'Official Music Video Production',
-      videoUrl: 'https://www.youtube.com/watch?v=ApV3y-YzZxM',
-    },
+
   ]
 
   const filters = ['All', 'TVC & Campaign', 'Music Video']
