@@ -302,6 +302,22 @@ const Portfolio = () => {
       description: 'Music Video Production',
       videoUrl: 'https://www.youtube.com/watch?v=U-VI4mmMVYE',
     },
+    {
+      id: 36,
+      title: 'Makro x MILLI - LIVE LIKE A PRO',
+      client: 'Makro × MILLI',
+      category: 'Music Video',
+      description: 'Official Music Video Production',
+      videoUrl: 'https://www.youtube.com/watch?v=MPePWnWx4IE',
+    },
+    {
+      id: 37,
+      title: 'QUEENS - FALL IN LOVE',
+      client: 'QUEENS',
+      category: 'Music Video',
+      description: 'Official Music Video Production',
+      videoUrl: 'https://www.youtube.com/watch?v=ApV3y-YzZxM',
+    },
   ]
 
   const filters = ['All', 'TVC & Campaign', 'Music Video']
@@ -329,7 +345,7 @@ const Portfolio = () => {
               animate={{ width: '80px' }}
               transition={{ delay: 0.2, duration: 0.8 }}
               style={{
-                boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+                boxShadow: '0 0 10px rgba(216, 48, 48, 0.5)',
               }}
             ></motion.div>
             
@@ -341,7 +357,7 @@ const Portfolio = () => {
             >
               <motion.span 
                 style={{
-                  background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                  background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
                   backgroundSize: '200% 100%',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -446,7 +462,7 @@ const Portfolio = () => {
                   whileTap={{ scale: 0.95 }}
                   className={`relative px-5 py-2.5 font-light text-xs uppercase tracking-wider transition-all duration-300 overflow-hidden rounded-full whitespace-nowrap ${
                     activeFilter === filter
-                      ? 'text-gray-900'
+                      ? 'text-white font-medium'
                       : 'text-[#9DA3AF]'
                   }`}
                 >
@@ -485,7 +501,7 @@ const Portfolio = () => {
                   whileTap={{ scale: 0.98 }}
                   className={`relative px-6 py-3 font-light text-sm uppercase tracking-wider transition-all duration-300 overflow-hidden ${
                     activeFilter === filter
-                      ? 'text-gray-900'
+                      ? 'text-white font-medium'
                       : 'text-[#9DA3AF] hover:text-deep-yellow'
                   }`}
                 >

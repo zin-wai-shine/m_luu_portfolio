@@ -79,13 +79,13 @@ const SkillsEducation = () => {
                 transition={{ delay: 0.2 }}
               >
                 <motion.div 
-                  className="w-20 h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mb-10"
+                  className="w-20 h-0.5 bg-gradient-to-r from-[#D83030] via-[#D83030] to-transparent mb-10"
                   initial={{ width: 0 }}
                   whileInView={{ width: '80px' }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2, duration: 0.8 }}
                   style={{
-                    boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+                    boxShadow: '0 0 10px rgba(216, 48, 48, 0.5)',
                   }}
                 ></motion.div>
                 <h2 
@@ -96,7 +96,7 @@ const SkillsEducation = () => {
                 >
                   <motion.span 
                     style={{
-                      background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                      background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
                       backgroundSize: '200% 100%',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
@@ -199,7 +199,7 @@ const SkillsEducation = () => {
                         <p 
                           className="text-deep-yellow font-light text-base md:text-lg"
                           style={{
-                            textShadow: '0 0 20px rgba(237, 187, 28, 0.5)',
+                            textShadow: '0 0 20px rgba(216, 48, 48, 0.5)',
                           }}
                         >
                           {edu.degree}
@@ -216,7 +216,7 @@ const SkillsEducation = () => {
                       <span 
                         className="text-deep-yellow font-light text-2xl md:text-3xl block text-right"
                         style={{
-                          textShadow: '0 0 20px rgba(237, 187, 28, 0.5)',
+                          textShadow: '0 0 20px rgba(216, 48, 48, 0.5)',
                         }}
                       >
                         {edu.year}
@@ -250,7 +250,7 @@ const SkillsEducation = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, duration: 0.8 }}
                 style={{
-                  boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+                  boxShadow: '0 0 10px rgba(216, 48, 48, 0.5)',
                 }}
               ></motion.div>
               <h2 
@@ -261,7 +261,7 @@ const SkillsEducation = () => {
               >
                 <motion.span
                   style={{
-                    background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(237, 187, 28, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
+                    background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(216, 48, 48, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
                     backgroundSize: '200% 100%',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
@@ -280,7 +280,7 @@ const SkillsEducation = () => {
                 </motion.span>
                 <motion.span 
                   style={{
-                    background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                    background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
                     backgroundSize: '200% 100%',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
@@ -319,12 +319,7 @@ const SkillsEducation = () => {
                     {skill.title}
                   </h3>
                   <div className="text-center">
-                    <span 
-                      className="inline-block px-6 py-3 bg-black/20 rounded-lg text-sm font-light uppercase tracking-wider"
-                      style={{ 
-                        color: '#EDBB1C',
-                      }}
-                    >
+                    <span className="inline-block px-4 py-1.5 bg-[#D83030]/20 border border-[#D83030]/40 rounded-full text-xs font-medium uppercase tracking-wider text-white backdrop-blur-sm shadow-[0_0_12px_rgba(216,48,48,0.3)]">
                       {skill.level}
                     </span>
                   </div>

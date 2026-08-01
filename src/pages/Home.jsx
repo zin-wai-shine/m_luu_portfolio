@@ -9,8 +9,8 @@ import VideoModal from '../components/VideoModal'
 
 // Import hero background image
 import heroBackgroundImage from '../assets/images/hero-cinematic-bgs.png'
-// Import about me image
-import aboutMeImage from '../assets/images/about_me_img.png'
+// Import about me background image
+import aboutMeBgImage from '../assets/images/about_me_bg_img.png'
 
 const Home = () => {
   const featuredProjects = [
@@ -95,18 +95,15 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Fullscreen Hero Section */}
       <section className="relative min-h-screen w-full flex items-center justify-start overflow-hidden">
-        {/* Background Image - Cool Dramatic Design */}
+        {/* Background Image - Original Color with Soft Dark Overlay */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
-          {/* Background Image - Dramatic Black & White with Enhanced Contrast */}
           <motion.div 
             className="hero-bg-motion absolute inset-0 w-full h-full bg-cover bg-no-repeat"
             style={{
               backgroundImage: `url(${heroBackgroundImage})`,
               minHeight: '100vh',
-              filter: 'grayscale(100%) contrast(1.5) brightness(0.75) saturate(0.8)',
             }}
             animate={{
-              // Slightly gentler motion
               scale: [1, 1.03, 1],
               x: [0, -12, 0],
               y: [0, -6, 0],
@@ -118,78 +115,39 @@ const Home = () => {
             }}
           ></motion.div>
           
-          {/* Dark dramatic overlay - strong contrast */}
+          {/* Soft dark overlay for text readability - matching About Me section */}
+          <div className="absolute inset-0 bg-black/15 pointer-events-none z-0"></div>
+          
+          {/* Left-side dark gradient protection */}
           <div 
-            className="absolute inset-0"
+            className="absolute inset-y-0 left-0 w-full md:w-3/4 lg:w-2/3 pointer-events-none z-0"
             style={{
-              background: 'linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.2) 80%, rgba(0,0,0,0.1) 100%)'
+              background: 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.1) 75%, transparent 100%)'
             }}
           ></div>
           
-          {/* Deep shadow overlay for dramatic effect */}
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 20%, transparent 50%, rgba(0,0,0,0.25) 80%, rgba(0,0,0,0.4) 100%)'
-            }}
-          ></div>
-          
-          {/* Strong vignette - dramatic corners */}
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: 'radial-gradient(ellipse 80% 100% at center, transparent 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 100%)'
-            }}
-          ></div>
-          
-          {/* Text area protection - lighter on left for readability */}
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: 'radial-gradient(ellipse 50% 120% at left center, transparent 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.5) 100%)'
-            }}
-          ></div>
-          
-          {/* Subtle texture overlay for depth */}
-          <div 
-            className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
-              backgroundSize: '200px 200px',
-              mixBlendMode: 'multiply',
-            }}
-          ></div>
-          
-          {/* Top/bottom dramatic fades */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent"></div>
-          
-          {/* Black filter at base/bottom */}
-          <div 
-            className="absolute bottom-0 left-0 right-0 h-40"
-            style={{
-              background: 'linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.4) 60%, transparent 100%)'
-            }}
-          ></div>
-      </div>
+          {/* Top/bottom dark fades */}
+          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/60 via-black/30 to-transparent pointer-events-none z-0"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-48 md:h-36 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none z-0"></div>
+        </div>
 
-      {/* Hero Content */}
+      {/* Hero Content - Left Aligned */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-          className="relative z-10 text-center px-4 md:px-8 lg:px-12 xl:px-16 pt-24 pb-20 max-w-4xl mx-auto"
+        className="relative z-10 text-left px-5 sm:px-8 md:px-12 lg:px-16 pt-24 md:pt-24 pb-16 md:pb-20 max-w-3xl ml-1 sm:ml-4 md:ml-12 lg:ml-16 mr-auto"
       >
         <motion.h1
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-sans mb-8 tracking-tight"
+          className="text-6xl sm:text-7xl md:text-7xl lg:text-8xl font-sans mb-4 md:mb-8 tracking-tight text-left"
         >
           <motion.span 
             className="font-light"
             style={{
-              background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(237, 187, 28, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
+              background: 'linear-gradient(90deg, #FFFFFF 0%, #E5E7EB 40%, rgba(216, 48, 48, 0.9) 50%, #E5E7EB 60%, #FFFFFF 100%)',
               backgroundSize: '200% 100%',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -210,7 +168,7 @@ const Home = () => {
           <motion.span 
             className="mx-2 md:mx-3 font-light tracking-wider"
             style={{
-              background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+              background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.6) 0%, rgba(216, 48, 48, 0.6) 40%, rgba(255, 55, 55, 1) 50%, rgba(216, 48, 48, 0.6) 60%, rgba(216, 48, 48, 0.6) 100%)',
               backgroundSize: '200% 100%',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -230,42 +188,45 @@ const Home = () => {
           </motion.span>
         </motion.h1>
           
-        {/* Modern decorative line with glow */}
+        {/* Modern decorative line with glow - aligned left */}
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: '100px' }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="h-0.5 bg-gradient-to-r from-transparent via-deep-yellow to-transparent mb-8 rounded-full shadow-[0_0_20px_rgba(237,187,28,0.6)] mx-auto"
+          className="h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mb-7 md:mb-8 rounded-full shadow-[0_0_20px_rgba(216,48,48,0.6)] ml-0 mr-auto"
         ></motion.div>
       
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          style={{ color: '#9DA3AF' }}
-          className="text-lg md:text-xl lg:text-2xl mb-6 font-light tracking-wide uppercase drop-shadow-[0_3px_15px_rgba(0,0,0,0.8),0_0_30px_rgba(0,0,0,0.4)]"
           style={{ 
             letterSpacing: '0.15em',
-            textShadow: '0 0 20px rgba(255,255,255,0.2), 0 0 40px rgba(255,255,255,0.1)',
+            color: '#F3F4F6'
           }}
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mt-2 md:mt-0 mb-4 md:mb-8 font-light tracking-wide uppercase drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] text-left flex flex-col md:flex-row md:flex-wrap space-y-4 md:space-y-0 leading-normal"
         >
-          Creative Director <span className="text-deep-yellow mx-2">/</span> Director of Photography <span className="text-deep-yellow mx-2">/</span> Steadicam Operator
+          <span className="block md:inline py-1 md:py-0">Creative Director</span>
+          <span className="hidden md:inline text-deep-yellow mx-2">/</span>
+          <span className="block md:inline py-1 md:py-0">Director of Photography</span>
+          <span className="hidden md:inline text-deep-yellow mx-2">/</span>
+          <span className="block md:inline py-1 md:py-0">Steadicam Operator</span>
         </motion.p>
 
+        {/* Small Bio Text - Base Positioned on Mobile */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
-          style={{ color: '#9DA3AF' }}
-          className="text-base md:text-lg max-w-2xl mb-10 leading-relaxed font-light drop-shadow-[0_2px_12px_rgba(0,0,0,0.7),0_0_25px_rgba(0,0,0,0.3)]"
           style={{ 
             letterSpacing: '0.05em',
-            textShadow: '0 0 15px rgba(255,255,255,0.15), 0 0 30px rgba(255,255,255,0.08)',
+            color: '#E5E7EB'
           }}
+          className="text-sm sm:text-base md:text-lg max-w-2xl mt-44 sm:mt-48 md:mt-10 mb-2 md:mb-10 leading-relaxed font-light drop-shadow-[0_3px_15px_rgba(0,0,0,0.9)] ml-0 mr-auto text-left"
         >
-          I'm an artist, and branding expert with over <span className="text-deep-yellow font-normal text-lg md:text-xl drop-shadow-[0_0_15px_rgba(237,187,28,0.6)]">10 years</span> of professional experience in the film and video production industry. <span className="text-deep-yellow font-normal text-lg md:text-xl drop-shadow-[0_0_15px_rgba(237,187,28,0.6)]">Based in Thailand</span>.
+          I'm an artist, and branding expert with over <span className="text-deep-yellow font-medium text-base sm:text-lg md:text-xl drop-shadow-[0_0_15px_rgba(216,48,48,0.8)]">10 years</span> of professional experience in the film and video production industry. <span className="text-deep-yellow font-medium text-base sm:text-lg md:text-xl drop-shadow-[0_0_15px_rgba(216,48,48,0.8)]">Based in Thailand</span>.
         </motion.p>
-        </motion.div>
+      </motion.div>
 
         {/* Scroll indicator */}
         <motion.div
@@ -288,167 +249,126 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* About Me Preview Section - Black & White Theme */}
-      <section className="px-4 bg-black relative">
-        <div className="container mx-auto max-w-6xl">
+      {/* About Me Preview Section with Full Background Image */}
+      <section 
+        className="relative py-24 overflow-hidden min-h-[600px] flex items-center bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${aboutMeBgImage})`,
+        }}
+      >
+        {/* Soft dark overlay for text readability - reduced opacity */}
+        <div className="absolute inset-0 bg-black/15 pointer-events-none z-0"></div>
+        
+        {/* Left-side dark gradient protection - lighter touch */}
+        <div 
+          className="absolute inset-y-0 left-0 w-full md:w-3/4 lg:w-2/3 pointer-events-none z-0"
+          style={{
+            background: 'linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 45%, rgba(0,0,0,0.1) 75%, transparent 100%)'
+          }}
+        ></div>
+        
+        {/* Top/bottom dark fades */}
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent pointer-events-none z-0"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none z-0"></div>
+
+        <div className="relative z-10 text-left px-5 sm:px-8 md:px-12 lg:px-16 max-w-3xl ml-1 sm:ml-4 md:ml-12 lg:ml-16 mr-auto w-full">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-12 items-stretch"
+            transition={{ duration: 0.6 }}
+            className="flex flex-col justify-center items-start text-left max-w-2xl py-6"
           >
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+            {/* Decorative accent line with glow - aligned exactly like hero page */}
+            <motion.div 
+              initial={{ width: 0 }}
+              whileInView={{ width: '100px' }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="flex flex-col justify-center items-start text-left h-full py-12 relative"
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mb-8 rounded-full shadow-[0_0_20px_rgba(216,48,48,0.6)] ml-0 mr-auto"
+            ></motion.div>
+            
+            <h2 
+              className="text-5xl md:text-6xl lg:text-7xl font-light mb-10 tracking-tight relative"
+              style={{
+                letterSpacing: '0.03em',
+              }}
             >
-              {/* Decorative accent line with glow */}
-              <motion.div 
-                className="w-20 h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow to-transparent mb-10"
-                initial={{ width: 0 }}
-                whileInView={{ width: '80px' }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2, duration: 0.8 }}
+              <motion.span
+                className="relative z-10"
                 style={{
-                  boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+                  background: 'linear-gradient(90deg, #FFFFFF 0%, #E5E7EB 40%, rgba(216, 48, 48, 0.9) 50%, #E5E7EB 60%, #FFFFFF 100%)',
+                  backgroundSize: '200% 100%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
                 }}
-              ></motion.div>
-              
-              <h2 
-                className="text-5xl md:text-6xl lg:text-7xl font-light mb-10 tracking-tight relative"
-                style={{
-                  letterSpacing: '0.03em',
+                animate={{
+                  backgroundPosition: ['200% 0', '-200% 0'],
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "linear",
                 }}
               >
-                <motion.span
-                  className="relative z-10"
-                  style={{
-                    background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(237, 187, 28, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
-                    backgroundSize: '200% 100%',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                  animate={{
-                    backgroundPosition: ['200% 0', '-200% 0'],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                >
-                  About{' '}
-                </motion.span>
-                <motion.span 
-                  className="relative z-10"
-                  style={{
-                    background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
-                    backgroundSize: '200% 100%',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                  animate={{
-                    backgroundPosition: ['200% 0', '-200% 0'],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                >
-                  Me
-                </motion.span>
-              </h2>
-              
-              <div className="space-y-7 mb-12 max-w-2xl relative z-10">
-                <motion.p 
-                  className="text-lg md:text-xl text-gray-300 leading-relaxed font-light"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
-                  style={{
-                    textShadow: '0 0 20px rgba(255, 255, 255, 0.05)',
-                  }}
-                >
-                  10 years of experience in filmmaking with a passion for visual storytelling. My background is in advertising production, TVC production, social media production, and food vlog production.
-                </motion.p>
-                <motion.p 
-                  className="text-base md:text-lg text-gray-400 leading-relaxed font-light"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4, duration: 0.6 }}
-                >
-                  Seeking new challenges, collaborations, and opportunities. I am passionate about contributing with my skills and bringing ideas to life.
-                </motion.p>
-              </div>
-              
-              <motion.div
+                About{' '}
+              </motion.span>
+              <motion.span 
+                className="relative z-10"
+                style={{
+                  background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.6) 0%, rgba(216, 48, 48, 0.6) 40%, rgba(255, 55, 55, 1) 50%, rgba(216, 48, 48, 0.6) 60%, rgba(216, 48, 48, 0.6) 100%)',
+                  backgroundSize: '200% 100%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+                animate={{
+                  backgroundPosition: ['200% 0', '-200% 0'],
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              >
+                Me
+              </motion.span>
+            </h2>
+            
+            <div className="space-y-7 mb-12 max-w-2xl relative z-10">
+              <motion.p 
+                className="text-lg md:text-xl text-gray-200 leading-relaxed font-light drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.5, duration: 0.6 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
               >
-                <Button to="/about" variant="primary">
-                  Learn More
-                </Button>
-              </motion.div>
-              
-              {/* Subtle background glow effect */}
-              <div 
-                className="absolute left-0 top-1/2 -translate-y-1/2 w-96 h-96 opacity-10 pointer-events-none"
-                style={{
-                  background: 'radial-gradient(circle, rgba(237, 187, 28, 0.3) 0%, transparent 70%)',
-                  filter: 'blur(60px)',
-                }}
-              ></div>
-            </motion.div>
+                10 years of experience in filmmaking with a passion for visual storytelling. My background is in advertising production, TVC production, social media production, and food vlog production.
+              </motion.p>
+              <motion.p 
+                className="text-base md:text-lg text-gray-300 leading-relaxed font-light drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
+                Seeking new challenges, collaborations, and opportunities. I am passionate about contributing with my skills and bringing ideas to life.
+              </motion.p>
+            </div>
             
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
+              transition={{ delay: 0.5, duration: 0.6 }}
             >
-              {/* About Me Image - Black & White Cool Design */}
-              <div className="relative overflow-hidden rounded-lg h-full max-w-[90%] mx-auto">
-                <img
-                  src={aboutMeImage}
-                  alt="About Me"
-                  className="w-full h-full object-cover"
-                  style={{
-                    filter: 'grayscale(100%) contrast(1.3) brightness(0.9)',
-                  }}
-                />
-                {/* Right to left gradient filter */}
-                <div className="absolute inset-0 bg-gradient-to-l from-black/40 via-black/20 to-transparent"></div>
-                {/* Cool overlay effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/25"></div>
-                {/* Subtle glow effect */}
-                <div 
-                  className="absolute inset-0"
-                  style={{
-                    boxShadow: 'inset 0 0 50px rgba(0, 0, 0, 0.35), 0 0 30px rgba(0, 0, 0, 0.55)',
-                  }}
-                ></div>
-              </div>
+              <Button to="/about" variant="primary">
+                Learn More
+              </Button>
             </motion.div>
           </motion.div>
         </div>
-        
-        {/* Black filter at base/bottom */}
-        <div 
-          className="absolute bottom-0 left-0 right-0 h-40"
-          style={{
-            background: 'linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 30%, rgba(0, 0, 0, 0.45) 60%, transparent 100%)'
-          }}
-        ></div>
       </section>
 
       {/* Featured Projects Section */}
@@ -470,7 +390,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.8 }}
               style={{
-                boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+                boxShadow: '0 0 10px rgba(216, 48, 48, 0.5)',
               }}
             ></motion.div>
             
@@ -483,7 +403,7 @@ const Home = () => {
               <motion.span
                 className="relative z-10"
                 style={{
-                  background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(237, 187, 28, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
+                  background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(216, 48, 48, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
                   backgroundSize: '200% 100%',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -503,7 +423,7 @@ const Home = () => {
               <motion.span 
                 className="relative z-10"
                 style={{
-                  background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                  background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
                   backgroundSize: '200% 100%',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -539,7 +459,7 @@ const Home = () => {
             <div 
               className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 opacity-10 pointer-events-none"
               style={{
-                background: 'radial-gradient(circle, rgba(237, 187, 28, 0.3) 0%, transparent 70%)',
+                background: 'radial-gradient(circle, rgba(216, 48, 48, 0.3) 0%, transparent 70%)',
                 filter: 'blur(60px)',
               }}
             ></div>
@@ -642,18 +562,18 @@ const Home = () => {
                       <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/10"></div>
                       
                       {/* Category Badge */}
-                      <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1.5 bg-deep-yellow/80 backdrop-blur-sm text-gray-900 text-xs font-light uppercase tracking-wider rounded-full">
+                      <div className="absolute top-4 left-4 z-10">
+                        <span className="px-3 py-1.5 bg-[#D83030]/90 backdrop-blur-md text-white text-[11px] font-medium uppercase tracking-wider rounded-full shadow-[0_2px_10px_rgba(216,48,48,0.5)] border border-red-400/30">
                           {project.category}
                         </span>
                       </div>
                       
                       {/* Video Indicator */}
                       {project.videoUrl && (
-                        <div className="absolute top-4 right-4">
-                          <div style={{ color: '#9DA3AF' }} className="px-3 py-1.5 bg-black/40 backdrop-blur-sm text-xs font-light rounded-full flex items-center gap-2">
-                            <div className="w-2 h-2 bg-deep-yellow rounded-full animate-pulse"></div>
-                            <span>VIDEO</span>
+                        <div className="absolute top-4 right-4 z-10">
+                          <div className="px-3 py-1.5 bg-black/60 backdrop-blur-md text-white text-[11px] font-medium rounded-full flex items-center gap-2 border border-white/20 shadow-md">
+                            <div className="w-2 h-2 bg-[#D83030] rounded-full animate-pulse shadow-[0_0_8px_rgba(216,48,48,0.9)]"></div>
+                            <span className="tracking-wider text-white">VIDEO</span>
                           </div>
                         </div>
                       )}
@@ -706,15 +626,15 @@ const Home = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 
-              style={{ color: '#9DA3AF' }}
               className="text-3xl md:text-5xl font-light mb-6 tracking-tight"
               style={{
+                color: '#9DA3AF',
                 letterSpacing: '0.03em',
                 textShadow: '0 0 30px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.15)',
               }}
             >
               Bringing <span className="text-deep-yellow" style={{
-                textShadow: '0 0 40px rgba(237, 187, 28, 0.8), 0 0 80px rgba(237, 187, 28, 0.4)',
+                textShadow: '0 0 40px rgba(216, 48, 48, 0.8), 0 0 80px rgba(216, 48, 48, 0.4)',
               }}>Creative Visions</span> to Life
             </h2>
             <p 

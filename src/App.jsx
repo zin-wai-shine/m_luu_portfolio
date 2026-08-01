@@ -11,6 +11,7 @@ import Experience from './pages/Experience'
 import Portfolio from './pages/Portfolio'
 import Activity from './pages/Activity'
 import Contact from './pages/Contact'
+import PdfViewerPage from './pages/PdfViewerPage'
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/activity" element={<Activity />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/dop" element={<PdfViewerPage />} />
+              <Route path="/steadicam-operator" element={<PdfViewerPage />} />
+              <Route path="/pdf/:type" element={<PdfViewerPage />} />
             </Routes>
           </main>
           <Footer />

@@ -8,11 +8,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'deep-yellow': '#EDBB1C',
-        'deep-yellow-alt': '#EAB308',
+        'deep-yellow': '#D83030',
+        'deep-yellow-alt': '#C02828',
         'light-bg': '#FAFAFA',
         'dark-bg': '#0A0A0A',
-        'text-primary': '#9DA3AF',
+        'text-primary': '#1F2937',
       },
       fontFamily: {
         'sans': ['Montserrat', 'system-ui', 'sans-serif'],

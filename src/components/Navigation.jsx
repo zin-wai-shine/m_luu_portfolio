@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import logoImage from '../assets/images/logo/logo.png'
 
 const Navigation = () => {
   const location = useLocation()
@@ -21,6 +22,8 @@ const Navigation = () => {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
+    { path: '/dop', label: 'DOP' },
+    { path: '/steadicam-operator', label: 'Steadicam Operator' },
     { path: '/skills-education', label: 'Skills & Education' },
     { path: '/experience', label: 'Experience' },
     { path: '/portfolio', label: 'Projects' },
@@ -39,10 +42,15 @@ const Navigation = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent ${
+        isMobileMenuOpen ? 'bg-[#222222]' : ''
+      }`}
+      style={{
+        backgroundColor: isMobileMenuOpen ? '#222222' : undefined,
+      }}
     >
-      {/* Filter overlay that blends with background - only when scrolled */}
-      {isScrolled && (
+      {/* Filter overlay that blends with background - only when scrolled & menu closed */}
+      {isScrolled && !isMobileMenuOpen && (
         <>
           {/* Light mode filter */}
           <motion.div
@@ -71,39 +79,32 @@ const Navigation = () => {
         </>
       )}
       
-      <div className="relative container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+      <div className="relative container mx-auto px-4 py-3 h-20 flex items-center justify-between z-10">
+        {/* Logo Container - sleek navbar height preserved */}
+        <div className="relative h-12 flex items-center">
           <Link 
             to="/" 
-            className="flex items-center gap-3 text-xl font-sans text-deep-yellow tracking-wider hover:text-deep-yellow-alt transition-colors group"
+            className="flex items-center transition-transform hover:scale-105"
           >
-            {/* Logo Design - LUU */}
-            <div className="relative flex items-center">
-              {/* LUU Text with enhanced styling */}
-              <span 
-                className="font-sans font-light uppercase tracking-[0.2em] text-2xl relative"
-                style={{
-                  textShadow: '0 0 20px rgba(237, 187, 28, 0.4), 0 0 40px rgba(237, 187, 28, 0.2)',
-                  letterSpacing: '0.15em',
-                }}
-              >
-                LUU
-              </span>
-              {/* Decorative line accent */}
-              <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-deep-yellow via-deep-yellow/60 to-transparent opacity-60 group-hover:opacity-100 transition-opacity"></div>
-            </div>
+            {/* Logo Image */}
+            <img 
+              src={logoImage} 
+              alt="M LUU Logo" 
+              className="h-20 sm:h-24 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain drop-shadow-[0_0_18px_rgba(216,48,48,0.5)] transform -translate-y-1"
+            />
           </Link>
+        </div>
           
           <div className="flex items-center gap-4">
             {/* Desktop Navigation */}
-            <ul className="hidden md:flex items-center space-x-8">
+            <ul className="hidden xl:flex items-center space-x-5 lg:space-x-6 text-xs lg:text-sm">
             {navLinks.map((link) => (
               <li key={link.path}>
                 <Link
                   to={link.path}
-                    className={`transition-colors duration-300 relative font-light ${
+                    className={`transition-colors duration-300 relative font-light whitespace-nowrap ${
                     location.pathname === link.path
-                        ? 'text-deep-yellow drop-shadow-sm'
+                        ? 'text-deep-yellow drop-shadow-sm font-normal'
                         : 'text-gray-800 dark:text-gray-200 hover:text-deep-yellow dark:hover:text-deep-yellow'
                   }`}
                 >
@@ -111,28 +112,24 @@ const Navigation = () => {
                 </Link>
               </li>
             ))}
-              
           </ul>
           
           {/* Contact Button with Pill Design */}
           <button
             onClick={() => navigate('/contact')}
-            className="hidden md:flex items-center justify-center px-8 py-3.5 rounded-full font-light text-sm uppercase tracking-wider transition-all duration-300 ml-8 contact-button-glass"
+            className="hidden xl:flex items-center justify-center px-7 py-3 rounded-full font-medium text-xs uppercase tracking-[0.15em] transition-all duration-300 ml-4 border border-[#D83030]/80 shadow-[0_0_15px_rgba(216,48,48,0.4)] hover:shadow-[0_0_25px_rgba(216,48,48,0.7)]"
             style={{
-              background: 'rgba(236, 184, 21, 0.08)', // #ECB815 with reduced opacity
-              color: '#EDBB1C', // Golden yellow text
+              background: 'rgba(216, 48, 48, 0.85)',
+              color: '#FFFFFF',
+              backdropFilter: 'blur(8px)',
             }}
             onMouseEnter={(e) => {
-              e.target.style.background = 'rgba(236, 184, 21, 0.2)'
-              e.target.style.backdropFilter = 'blur(10px)'
-              e.target.style.WebkitBackdropFilter = 'blur(10px)'
-              e.target.style.boxShadow = '0 4px 20px rgba(236, 184, 21, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+              e.currentTarget.style.background = 'rgba(230, 45, 45, 1)'
+              e.currentTarget.style.transform = 'translateY(-1px)'
             }}
             onMouseLeave={(e) => {
-              e.target.style.background = 'rgba(236, 184, 21, 0.08)'
-              e.target.style.backdropFilter = 'blur(0px)'
-              e.target.style.WebkitBackdropFilter = 'blur(0px)'
-              e.target.style.boxShadow = 'none'
+              e.currentTarget.style.background = 'rgba(216, 48, 48, 0.85)'
+              e.currentTarget.style.transform = 'translateY(0px)'
             }}
           >
             Contact
@@ -141,7 +138,7 @@ const Navigation = () => {
           {/* Mobile menu button */}
             <button
               onClick={toggleMobileMenu}
-              className="md:hidden p-2 rounded-lg text-gray-800 dark:text-gray-200 hover:text-deep-yellow dark:hover:text-deep-yellow focus:outline-none"
+              className="xl:hidden p-2 rounded-lg text-white hover:text-deep-yellow focus:outline-none"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -156,7 +153,6 @@ const Navigation = () => {
             </button>
           </div>
         </div>
-      </div>
 
       {/* Mobile menu */}
       <AnimatePresence>
@@ -165,7 +161,8 @@ const Navigation = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden backdrop-blur-xl border-t border-gray-200/30 dark:border-gray-700/30"
+            className="xl:hidden border-t border-white/10 bg-[#222222]"
+            style={{ backgroundColor: '#222222' }}
           >
             <div className="container mx-auto px-4 py-4">
               <ul className="space-y-4 mb-4">
@@ -176,8 +173,8 @@ const Navigation = () => {
                       onClick={closeMobileMenu}
                       className={`block py-2 transition-colors duration-300 font-light ${
                         location.pathname === link.path
-                          ? 'text-deep-yellow'
-                          : 'text-gray-800 dark:text-gray-200 hover:text-deep-yellow dark:hover:text-deep-yellow'
+                          ? 'text-[#D83030] font-medium'
+                          : 'text-gray-200 hover:text-[#D83030]'
                       }`}
                     >
                       {link.label}
@@ -191,11 +188,7 @@ const Navigation = () => {
                   navigate('/contact')
                   closeMobileMenu()
                 }}
-                className={`w-full flex items-center justify-center px-8 py-3.5 rounded-full font-light text-sm uppercase tracking-wider transition-all duration-300 ${
-                  location.pathname === '/contact'
-                    ? 'bg-deep-yellow/20 text-deep-yellow border border-deep-yellow/30'
-                    : 'bg-black/20 backdrop-blur-sm text-deep-yellow border border-white/10 hover:bg-deep-yellow/10'
-                }`}
+                className="w-full flex items-center justify-center px-8 py-3.5 rounded-full font-medium text-sm uppercase tracking-wider transition-all duration-300 bg-[#D83030] text-white border border-[#D83030] shadow-[0_0_15px_rgba(216,48,48,0.4)]"
               >
                 Contact
               </button>

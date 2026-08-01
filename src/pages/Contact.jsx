@@ -74,7 +74,7 @@ const Contact = () => {
               animate={{ width: '80px' }}
               transition={{ delay: 0.2, duration: 0.8 }}
               style={{
-                boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+                boxShadow: '0 0 10px rgba(216, 48, 48, 0.5)',
               }}
             ></motion.div>
             
@@ -90,7 +90,7 @@ const Contact = () => {
               <span 
                 className="text-deep-yellow"
                 style={{
-                  textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
+                  textShadow: '0 0 40px rgba(216, 48, 48, 0.6), 0 0 80px rgba(216, 48, 48, 0.3)',
                 }}
               >
                 Touch

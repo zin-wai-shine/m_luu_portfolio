@@ -48,7 +48,7 @@ const About = () => {
               animate={{ width: '80px' }}
               transition={{ delay: 0.2, duration: 0.8 }}
               style={{
-                boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+                boxShadow: '0 0 10px rgba(216, 48, 48, 0.5)',
               }}
             ></motion.div>
             
@@ -60,7 +60,7 @@ const About = () => {
             >
               <motion.span
                 style={{
-                  background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(237, 187, 28, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
+                  background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(216, 48, 48, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
                   backgroundSize: '200% 100%',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -79,7 +79,7 @@ const About = () => {
               </motion.span>
               <motion.span 
                 style={{
-                  background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                  background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
                   backgroundSize: '200% 100%',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -126,7 +126,7 @@ const About = () => {
                 <div 
                   className="text-4xl md:text-5xl font-light text-deep-yellow mb-2"
                   style={{
-                    textShadow: '0 0 40px rgba(237, 187, 28, 0.6), 0 0 80px rgba(237, 187, 28, 0.3)',
+                    textShadow: '0 0 40px rgba(216, 48, 48, 0.6), 0 0 80px rgba(216, 48, 48, 0.3)',
                   }}
                 >
                   {stat.value}
@@ -165,7 +165,7 @@ const About = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2, duration: 0.8 }}
                   style={{
-                    boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+                    boxShadow: '0 0 10px rgba(216, 48, 48, 0.5)',
                   }}
                 ></motion.div>
                 <h2 
@@ -176,7 +176,7 @@ const About = () => {
                 >
                   <motion.span
                     style={{
-                      background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(237, 187, 28, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
+                      background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(216, 48, 48, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
                       backgroundSize: '200% 100%',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
@@ -195,7 +195,7 @@ const About = () => {
                   </motion.span>
                   <motion.span 
                     style={{
-                      background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                      background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
                       backgroundSize: '200% 100%',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
@@ -389,7 +389,7 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3, duration: 0.8 }}
                 style={{
-                  boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+                  boxShadow: '0 0 10px rgba(216, 48, 48, 0.5)',
                 }}
               ></motion.div>
               <h3 
@@ -400,7 +400,7 @@ const About = () => {
               >
                 <motion.span
                   style={{
-                    background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(237, 187, 28, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
+                    background: 'linear-gradient(90deg, #9DA3AF 0%, #9DA3AF 40%, rgba(216, 48, 48, 0.8) 50%, #9DA3AF 60%, #9DA3AF 100%)',
                     backgroundSize: '200% 100%',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
@@ -419,7 +419,7 @@ const About = () => {
                 </motion.span>
                 <motion.span 
                   style={{
-                    background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                    background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
                     backgroundSize: '200% 100%',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',

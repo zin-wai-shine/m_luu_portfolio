@@ -139,18 +139,18 @@ const GalleryItem = ({ project, index, onVideoClick }) => {
           <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/10"></div>
           
           {/* Category Badge */}
-          <div className="absolute top-4 left-4">
-            <span className="px-3 py-1.5 bg-deep-yellow/80 backdrop-blur-sm text-gray-900 text-xs font-light uppercase tracking-wider rounded-full">
+          <div className="absolute top-4 left-4 z-10">
+            <span className="px-3 py-1.5 bg-[#D83030]/90 backdrop-blur-md text-white text-[11px] font-medium uppercase tracking-wider rounded-full shadow-[0_2px_10px_rgba(216,48,48,0.5)] border border-red-400/30">
               {project.category}
             </span>
           </div>
           
           {/* Video Indicator */}
           {project.videoUrl && (
-            <div className="absolute top-4 right-4">
-              <div style={{ color: '#9DA3AF' }} className="px-3 py-1.5 bg-black/40 backdrop-blur-sm text-xs font-light rounded-full flex items-center gap-2">
-                <div className="w-2 h-2 bg-deep-yellow rounded-full animate-pulse"></div>
-                <span>VIDEO</span>
+            <div className="absolute top-4 right-4 z-10">
+              <div className="px-3 py-1.5 bg-black/60 backdrop-blur-md text-white text-[11px] font-medium rounded-full flex items-center gap-2 border border-white/20 shadow-md">
+                <div className="w-2 h-2 bg-[#D83030] rounded-full animate-pulse shadow-[0_0_8px_rgba(216,48,48,0.9)]"></div>
+                <span className="tracking-wider text-white">VIDEO</span>
               </div>
             </div>
           )}

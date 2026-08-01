@@ -82,7 +82,7 @@ const Activity = () => {
               animate={{ width: '80px' }}
               transition={{ delay: 0.2, duration: 0.8 }}
               style={{
-                boxShadow: '0 0 10px rgba(237, 187, 28, 0.5)',
+                boxShadow: '0 0 10px rgba(216, 48, 48, 0.5)',
               }}
             ></motion.div>
             
@@ -94,7 +94,7 @@ const Activity = () => {
             >
               <motion.span 
                 style={{
-                  background: 'linear-gradient(90deg, rgba(237, 187, 28, 0.4) 0%, rgba(237, 187, 28, 0.4) 40%, rgba(237, 187, 28, 1) 50%, rgba(237, 187, 28, 0.4) 60%, rgba(237, 187, 28, 0.4) 100%)',
+                  background: 'linear-gradient(90deg, rgba(216, 48, 48, 0.4) 0%, rgba(216, 48, 48, 0.4) 40%, rgba(216, 48, 48, 1) 50%, rgba(216, 48, 48, 0.4) 60%, rgba(216, 48, 48, 0.4) 100%)',
                   backgroundSize: '200% 100%',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',

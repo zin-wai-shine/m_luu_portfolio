@@ -12,25 +12,20 @@ const Button = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false)
   
-  const baseClasses = 'px-8 py-3.5 text-sm font-light uppercase tracking-wider transition-all duration-300'
+  const baseClasses = 'inline-flex items-center justify-center px-8 py-3.5 text-xs font-medium uppercase tracking-[0.15em] transition-all duration-300 rounded-full border border-[#D83030]/80 shadow-[0_0_15px_rgba(216,48,48,0.4)]'
   
-  // Always use rounded-full for pill shape
-  const roundedClass = 'rounded-full'
-  
-  // All variants use background with reduced opacity and golden yellow text
   const buttonStyle = {
-    background: isHovered 
-      ? 'rgba(236, 184, 21, 0.2)' 
-      : 'rgba(236, 184, 21, 0.08)', // #ECB815 with reduced opacity
-    color: '#EDBB1C', // Golden yellow text
-    backdropFilter: isHovered ? 'blur(10px)' : 'blur(0px)',
-    WebkitBackdropFilter: isHovered ? 'blur(10px)' : 'blur(0px)',
+    background: isHovered ? 'rgba(230, 45, 45, 1)' : 'rgba(216, 48, 48, 0.85)',
+    color: '#FFFFFF',
+    backdropFilter: 'blur(8px)',
+    WebkitBackdropFilter: 'blur(8px)',
     boxShadow: isHovered 
-      ? '0 4px 20px rgba(236, 184, 21, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)' 
-      : 'none',
+      ? '0 0 25px rgba(216, 48, 48, 0.75), 0 4px 20px rgba(216, 48, 48, 0.4)' 
+      : '0 0 15px rgba(216, 48, 48, 0.4)',
+    transform: isHovered ? 'translateY(-1px)' : 'translateY(0px)',
   }
 
-  const classes = `${baseClasses} ${roundedClass} ${className}`
+  const classes = `${baseClasses} ${className}`
 
   if (to) {
     return (
