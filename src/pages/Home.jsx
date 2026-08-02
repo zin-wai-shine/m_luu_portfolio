@@ -9,8 +9,10 @@ import VideoModal from '../components/VideoModal'
 
 // Import hero background image
 import heroBackgroundImage from '../assets/images/hero-cinematic-bgs.png'
+import mobileHeroBackgroundImage from '../assets/images/mobile-hero-cinematic-bg.png'
 // Import about me background image
 import aboutMeBgImage from '../assets/images/about_me_bg_img.png'
+import mobileAboutMeBgImage from '../assets/images/mobile_about_me_bg.png'
 
 const Home = () => {
   const featuredProjects = [
@@ -111,11 +113,33 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Fullscreen Hero Section */}
       <section className="relative min-h-screen w-full flex items-center justify-start overflow-hidden">
-        {/* Background Image - Original Color with Soft Dark Overlay */}
+        {/* Background Image - Mobile & Desktop versions */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <div className="absolute inset-0 w-full h-full [transform:scaleX(-1)]">
+          {/* Mobile Background Image (Centered) */}
+          <div className="md:hidden absolute inset-0 w-full h-full [transform:scaleX(-1)]">
             <motion.div 
-              className="hero-bg-motion absolute inset-0 w-full h-full bg-cover bg-no-repeat bg-[78%_center] md:bg-center"
+              className="hero-bg-motion absolute inset-0 w-full h-full bg-cover bg-no-repeat bg-center"
+              style={{
+                backgroundImage: `url(${mobileHeroBackgroundImage})`,
+                minHeight: '100vh',
+              }}
+              animate={{
+                scale: [1, 1.03, 1],
+                x: [0, -12, 0],
+                y: [0, -6, 0],
+              }}
+              transition={{
+                duration: 24,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            ></motion.div>
+          </div>
+
+          {/* Desktop Background Image */}
+          <div className="hidden md:block absolute inset-0 w-full h-full [transform:scaleX(-1)]">
+            <motion.div 
+              className="hero-bg-motion absolute inset-0 w-full h-full bg-cover bg-no-repeat bg-center"
               style={{
                 backgroundImage: `url(${heroBackgroundImage})`,
                 minHeight: '100vh',
@@ -132,23 +156,29 @@ const Home = () => {
               }}
             ></motion.div>
           </div>
+        </div>
           
           {/* Enhanced dark overlay for text contrast and cinematic depth */}
-          <div className="absolute inset-0 bg-black/40 md:bg-black/30 pointer-events-none z-0"></div>
+          <div className="absolute inset-0 bg-black/15 md:bg-black/30 pointer-events-none z-0"></div>
           
-          {/* Increased left-side dark gradient shadow protection */}
+          {/* Left-side dark gradient shadow protection (Strong shadow on left for mobile) */}
           <div 
-            className="absolute inset-y-0 left-0 w-full md:w-4/5 lg:w-3/4 pointer-events-none z-0"
+            className="md:hidden absolute inset-y-0 left-0 w-full pointer-events-none z-0"
+            style={{
+              background: 'linear-gradient(to right, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.75) 35%, rgba(0,0,0,0.4) 65%, transparent 100%)'
+            }}
+          ></div>
+          <div 
+            className="hidden md:block absolute inset-y-0 left-0 w-4/5 lg:w-3/4 pointer-events-none z-0"
             style={{
               background: 'linear-gradient(to right, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.75) 40%, rgba(0,0,0,0.4) 70%, transparent 100%)'
             }}
           ></div>
           
           {/* Top/bottom dark fades and cinematic edge vignette shadow */}
-          <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/80 via-black/40 to-transparent pointer-events-none z-0"></div>
+          <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/60 md:from-black/80 via-black/30 md:via-black/40 to-transparent pointer-events-none z-0"></div>
           <div className="absolute bottom-0 left-0 right-0 h-52 md:h-44 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none z-0"></div>
-          <div className="absolute inset-0 shadow-[inset_0_0_120px_rgba(0,0,0,0.8)] pointer-events-none z-0"></div>
-        </div>
+          <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(0,0,0,0.4)] md:shadow-[inset_0_0_120px_rgba(0,0,0,0.8)] pointer-events-none z-0"></div>
 
       {/* Hero Content - Left Aligned */}
       <motion.div
@@ -252,12 +282,22 @@ const Home = () => {
       </section>
 
       {/* About Me Preview Section with Full Background Image */}
-      <section 
-        className="relative py-24 overflow-hidden min-h-[600px] flex items-center bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${aboutMeBgImage})`,
-        }}
-      >
+      <section className="relative py-24 overflow-hidden min-h-[600px] flex items-center">
+        {/* Mobile Background Image */}
+        <div 
+          className="md:hidden absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none"
+          style={{
+            backgroundImage: `url(${mobileAboutMeBgImage})`,
+          }}
+        ></div>
+
+        {/* Desktop Background Image */}
+        <div 
+          className="hidden md:block absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none"
+          style={{
+            backgroundImage: `url(${aboutMeBgImage})`,
+          }}
+        ></div>
         {/* Soft dark overlay for text readability - reduced opacity */}
         <div className="absolute inset-0 bg-black/15 pointer-events-none z-0"></div>
         
